@@ -8,12 +8,10 @@
 <body>
 
 	<h1> Random header 2.0 </h1>
-	,<section>
+	<section>
  	<ul>
 	<li> stuff </li>
 	</ul>
-
-
 	</section>
 
 <pre>
@@ -32,8 +30,6 @@ $summoner = $summonerAPI->info($name);
 
 print_r($summoner);
 
-
 ?>
 </pre>
-
 </body>
