@@ -15,4 +15,13 @@
 
 
 	</section>
+
+
+<?php 
+
+echo $_GET['name'];
+
+
+?>
+
 </body>
