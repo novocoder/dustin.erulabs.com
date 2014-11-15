@@ -1,0 +1,173 @@
+[
+    {
+        "name": "guzzlehttp/streams",
+        "version": "1.5.1",
+        "version_normalized": "1.5.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/guzzle/streams.git",
+            "reference": "fb0d1ee29987c2bdc59867bffaade6fc88c2675f"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/guzzle/streams/zipball/fb0d1ee29987c2bdc59867bffaade6fc88c2675f",
+            "reference": "fb0d1ee29987c2bdc59867bffaade6fc88c2675f",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "~4.0"
+        },
+        "time": "2014-08-10 23:57:01",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.5-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "GuzzleHttp\\Stream\\": "src/"
+            },
+            "files": [
+                "src/functions.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Michael Dowling",
+                "email": "mtdowling@gmail.com",
+                "homepage": "https://github.com/mtdowling"
+            }
+        ],
+        "description": "Provides a simple abstraction over streams of data (Guzzle 4+)",
+        "homepage": "http://guzzlephp.org/",
+        "keywords": [
+            "Guzzle",
+            "stream"
+        ]
+    },
+    {
+        "name": "guzzlehttp/guzzle",
+        "version": "4.0.2",
+        "version_normalized": "4.0.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/guzzle/guzzle.git",
+            "reference": "40db53833aaea528347994acd4578d7b9b2211ee"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/guzzle/guzzle/zipball/40db53833aaea528347994acd4578d7b9b2211ee",
+            "reference": "40db53833aaea528347994acd4578d7b9b2211ee",
+            "shasum": ""
+        },
+        "require": {
+            "guzzlehttp/streams": "~1.0",
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "ext-curl": "*",
+            "phpunit/phpunit": "~4.0",
+            "psr/log": "~1.0"
+        },
+        "time": "2014-04-16 17:33:22",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "4.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "GuzzleHttp\\": "src/"
+            },
+            "files": [
+                "src/functions.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Michael Dowling",
+                "email": "mtdowling@gmail.com",
+                "homepage": "https://github.com/mtdowling"
+            }
+        ],
+        "description": "Guzzle is a PHP HTTP client library and framework for building RESTful web service clients",
+        "homepage": "http://guzzlephp.org/",
+        "keywords": [
+            "client",
+            "curl",
+            "framework",
+            "http",
+            "http client",
+            "rest",
+            "web service"
+        ]
+    },
+    {
+        "name": "paquettg/leaguewrap",
+        "version": "0.6.0",
+        "version_normalized": "0.6.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/paquettg/leaguewrap.git",
+            "reference": "01459c4afbc5dfa329fd472099c35b13e4ea95b7"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/paquettg/leaguewrap/zipball/01459c4afbc5dfa329fd472099c35b13e4ea95b7",
+            "reference": "01459c4afbc5dfa329fd472099c35b13e4ea95b7",
+            "shasum": ""
+        },
+        "require": {
+            "guzzlehttp/guzzle": "4.0.*",
+            "php": ">=5.4"
+        },
+        "require-dev": {
+            "mockery/mockery": "0.8.*",
+            "phpunit/phpunit": "3.7.*"
+        },
+        "time": "2014-10-15 15:36:05",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "LeagueWrap": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Gilles Paquette",
+                "email": "paquettg@gmail.com",
+                "homepage": "http://gillespaquette.ca"
+            }
+        ],
+        "description": "A wrapper for the League of Legends API.",
+        "homepage": "https://github.com/paquettg/leaguewrap",
+        "keywords": [
+            "api",
+            "facade",
+            "league",
+            "legends",
+            "proxy",
+            "wrap"
+        ]
+    }
+]
