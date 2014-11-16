@@ -7,7 +7,7 @@
 </head>
 <body>
 
-	<h1> Random header 2.0 </h1>
+	<h1> Sommoner Shit </h1>
 	<section>
  	<ul>
 	<li> stuff </li>
@@ -15,8 +15,24 @@
 	</section>
 
 
+	<form action="index.php" method="post">
+		Name: <input type="text" name="name"><br>
+		<input type="submit">
+	</form>
+
+
+
+
+
+
+
+
+
+
 <pre>
-<?php 
+
+<?php
+
 
 // Include the PHP RIOT API library
 include('php-riot-api.php');
@@ -25,11 +41,11 @@ include('php-riot-api.php');
 $lolapi = new riotapi('na');
 
 // IF they DIDNT provided a name in the URL, like "/?name=bob", then use dustins name
-if ($_GET['name'] == '') {
+if ($_POST['name'] == '') {
 	$name = 'Reptuar';
 // Otherwise, use what they gave us
 } else {
-	$name = $_GET['name'];
+	$name = $_POST['name'];
 }
 
 // Get the data about that summoner
