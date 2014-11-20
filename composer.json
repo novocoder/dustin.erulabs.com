@@ -1,0 +1,5 @@
+{
+    "require": {
+        "paquettg/leaguewrap": "~0.6"
+    }
+}

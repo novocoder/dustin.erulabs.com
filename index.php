@@ -40,16 +40,20 @@
 
 	</section>
 
+<<<<<<< HEAD
 
 
 
 
 
+=======
+>>>>>>> 9428d697c41660560d357a6f6c5c8aeb8c67ac84
 <pre>
 
 <?php
 
 
+<<<<<<< HEAD
 // Include the PHP RIOT API library
 include('php-riot-api.php');
 
@@ -63,21 +67,20 @@ if ($_POST['name'] == '') {
 } else {
 	$name = $_POST['name'];
 }
+=======
+require 'vendor/autoload.php';
+use LeagueWrap\Api;
+>>>>>>> 9428d697c41660560d357a6f6c5c8aeb8c67ac84
 
-// Get the data about that summoner
-$person = $lolapi->getSummonerByName($name);
+$api = new Api('9249495a-ec4c-4026-bb9c-a7648103bd41');
 
-// Extract that persons ID for later use
-$id = $person[strtolower($name)]['id'];
+$summonerAPI = $api->summoner();
 
-// Get info about last game
-$game = $lolapi->getGame($id);
+$name = $_GET['name'];
 
-// Print the Array of the last game
-print_r($game);
+$summoner = $summonerAPI->info($name);
 
-// see https://github.com/kevinohashi/php-riot-api
-// and https://github.com/kevinohashi/php-riot-api/blob/master/testing.php
+print_r($summoner);
 
 ?>
 </pre>
