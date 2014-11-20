@@ -6,23 +6,39 @@
 		
 </head>
 <body>
+	
 
-	<h1> Sommoner Shit </h1>
+
+
+	<h1> Summoner Shit </h1>
 	<section>
  	<ul>
-	<li> stuff </li>
+	Enter Summoner name for shit
 	</ul>
+
+	<br>
+
 	</section>
 
-
+	<section>	
 	<form action="index.php" method="post">
+		
+	
+
+		
+			
 		Name: <input type="text" name="name"><br>
-		<input type="submit">
+
+			<br>
+		
+			<input type="submit"><br>
+
+		
+		
 	</form>
 
 
-
-
+	</section>
 
 
 
