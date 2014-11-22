@@ -1,5 +1,7 @@
 <?PHP
+
 $champions = [];
+
 $champions[1] = "Annie";
 $champions[2] = "Olaf";
 $champions[3] = "Galio";
@@ -121,4 +123,5 @@ $champions[266] = "Aatrox";
 $champions[267] = "Nami";
 $champions[268] = "Azir";
 $champions[412] = "Thresh";
+$champions[429] = "kalista";
 ?>      

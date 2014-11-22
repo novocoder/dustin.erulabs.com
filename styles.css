@@ -1,9 +1,7 @@
 
-
-section  {
-  color: green; 
-  
+body {
+background-color: #000011;
+color: #ffffff;
 }
 
-form action="post" { 
-  color: green;
+
