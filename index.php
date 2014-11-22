@@ -19,7 +19,7 @@
 
 <b>
 
-<font size=9><center>Is that a Nilknarf?</center></font>
+<font size=9><center>Find Summoner Stuff Hurr</center></font>
 <script src="script.js"></script>
 
 
@@ -38,7 +38,6 @@ if ($_POST["name"] ==''){
 } else {
 	echo $_POST["name"];
 }
-echo $bakasan->profileIconId;
 
 ?>
 <br><Br><br>
@@ -67,7 +66,7 @@ $recentGames = $gameAPI->recent($summoner->id);
 
 
 
-// Makes blank lolnumber display a "0" instead of reamining blank.
+
 
 
 
