@@ -93,6 +93,7 @@ function fixlolnum($lolnumber) {
 function fixlolname($lolname) {
 	$lolname = str_replace(" ", "", $lolname);
 	$lolname = str_replace("'", "", $lolname);
+	$lolname = str_replace(".", "", $lolname);
 	return $lolname;
 }
 
@@ -180,7 +181,18 @@ foreach ($games as $gameNum => $game) {
 	
 
 #print_r($recentGames->games[0]->stats);
+
+foreach ($champions as $championId => $championName) {
+
+
+	echo "<img src='/images/" . fixlolname($championName) . "Square.png'>";	
+
+
+}
+
 ?>
+
+
 </pre>
 </body>
 </html>
