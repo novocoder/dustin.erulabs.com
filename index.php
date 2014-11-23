@@ -41,7 +41,7 @@ Hello
 
 <?php
 
-	if ($_POST["name"] ==''){
+	if (!isset($_POST["name"])){
 		echo "Summoner";
 	} else {
 		echo $_POST["name"];
@@ -72,6 +72,10 @@ $summonerAPI = $api->summoner();
 $gameAPI = $api->game();
 
 $name = $_POST['name'];
+
+if($name == "") {
+  exit("No name provided!");
+}
 
 $summoner = $summonerAPI->info($name);
 
@@ -108,21 +112,44 @@ $games = $recentGames->games;
 $game=array_shift($games);
 
 
-	echo "<img src='/images/" . fixlolname($championName) . "Square.png'>";	
 
 	$championId = $game->championId;
-
+	
 	$championName = $champions[$championId];
+	
+	echo "<!---#$championId--->";
+
+	echo "<img src='/images/" . fixlolname($championName) . "Square.png'>";	
+
+	echo $championName;
+
+	echo " - ";
 
 	fixlolnum($game->stats->championsKilled);
 	echo "/";
 	fixlolnum($game->stats->numDeaths);
 	echo "/";
 	fixlolnum($game->stats->assists);
+	
+	
+	echo " - ";
 
-	echo "<!---#$championId--->";
+
+	$won = $game->stats->win;
+
+	if ($won == 1){
+	  echo "<font color='green'>Victory</font>";
+	}
+	else {
+	  echo "<font color='red'>Defeat</font>";
 
 
+	}
+       	echo "<br><br>\n\n";
+	
+
+
+#print_r($recentGames->games[0]->stats);
 ?>
 <br>
 <?PHP
@@ -155,7 +182,7 @@ foreach ($games as $gameNum => $game) {
 	  echo "<font color='green'>Victory</font>";
 	}
 	else {
-	  echo "<font color='red'>Defeat</font>";
+	  echo "<font color='red'>Losed</font>";
 
 	}
 	echo "<br><br>\n\n";
