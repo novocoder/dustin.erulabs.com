@@ -24,23 +24,35 @@
 
 
 <form action="index.php" method="post">
+
 	Name:
+
 	<br>
-	<input type="text" name="name">
+		<input type="text" name="name">
 	<br>
-	<input type="submit" value="submit">
+		<input type="submit" value="submit">
+
+
 </form>
 
+<br>
+
 Hello
+
 <?php
-if ($_POST["name"] ==''){
-	echo "Summoner";
-} else {
-	echo $_POST["name"];
+
+	if ($_POST["name"] ==''){
+		echo "Summoner";
+	} else {
+		echo $_POST["name"];
 }
 
+
+
 ?>
-<br><Br><br>
+
+
+<br>
 <pre>
 <?PHP
 
@@ -68,6 +80,7 @@ $recentGames = $gameAPI->recent($summoner->id);
 
 
 
+/*Places a "0" in return if there is no value */
 
 
 function fixlolnum($lolnumber) {
@@ -78,6 +91,9 @@ function fixlolnum($lolnumber) {
 	}
 }
 
+
+
+/*Fixes Character names with spaces */
 
 function fixlolname($lolname) {
 	$lolname = str_replace(" ", "", $lolname);
@@ -112,15 +128,14 @@ foreach ($recentGames->games as $gameNum => $game) {
 	$won = $game->stats->win;
 
 	if ($won == 1){
-	  echo "Victory";
+	  echo "<font color='green'>Victory</font>";
 	}
 	else {
-	  echo "Defeat";
+	  echo "<font color='red'>Defeat</font>";
 
 	}
 	echo "<br><br>\n\n";
 }
-
 
 #print_r($recentGames->games[0]->stats);
 ?>
