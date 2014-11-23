@@ -37,26 +37,15 @@
 
 <br>
 
-Hello
 
+Hello
 <?php
 
 	if (!isset($_POST["name"])){
 		echo "Summoner";
 	} else {
 		echo $_POST["name"];
-}
-
-
-
-?>
-
-
-
-<br>
-<pre>
-<?PHP
-
+}         
 
 require 'championlist.php';
 
@@ -81,9 +70,10 @@ $summoner = $summonerAPI->info($name);
 
 $recentGames = $gameAPI->recent($summoner->id);
 
+echo $summoner->summonerLevel;
 
 
-
+echo "<br>";
 
 /*Places a "0" in return if there is no value */
 
@@ -107,11 +97,10 @@ function fixlolname($lolname) {
 }
 
 
+
 $games = $recentGames->games;
 
 $game=array_shift($games);
-
-
 
 	$championId = $game->championId;
 	
@@ -142,9 +131,10 @@ $game=array_shift($games);
 	}
 	else {
 	  echo "<font color='red'>Defeat</font>";
-
-
 	}
+
+	#print_r($summoner);
+
        	echo "<br><br>\n\n";
 	
 
