@@ -52,6 +52,7 @@ Hello
 ?>
 
 
+
 <br>
 <pre>
 <?PHP
@@ -102,7 +103,30 @@ function fixlolname($lolname) {
 }
 
 
-foreach ($recentGames->games as $gameNum => $game) {
+$games = $recentGames->games;
+
+$game=array_shift($games);
+
+
+	echo "<img src='/images/" . fixlolname($championName) . "Square.png'>";	
+
+	$championId = $game->championId;
+
+	$championName = $champions[$championId];
+
+	fixlolnum($game->stats->championsKilled);
+	echo "/";
+	fixlolnum($game->stats->numDeaths);
+	echo "/";
+	fixlolnum($game->stats->assists);
+
+	echo "<!---#$championId--->";
+
+
+?>
+<br>
+<?PHP
+foreach ($games as $gameNum => $game) {
 
 	$championId = $game->championId;
 	
@@ -136,6 +160,7 @@ foreach ($recentGames->games as $gameNum => $game) {
 	}
 	echo "<br><br>\n\n";
 }
+	
 
 #print_r($recentGames->games[0]->stats);
 ?>
