@@ -73,9 +73,11 @@ $gameTypes = $myStats->playerStatSummaries;
 
 foreach($gameTypes as $gameType) {
   if ($gameType->playerStatSummaryType == 'Unranked' or
-  $gameType->playerStatSummaryType == 'RankedSolo5x5') {
-    echo "Total ".$gameType->playerStatSummaryType." kills: ";
+  $gameType->playerStatSummaryType == 'RankedSolo5x5' or
+  $gameType->playerStatSummaryType == 'RankedTeam5x5') {
+    echo "Total ".$gameType->playerStatSummaryType." <font color=red><right>Kills</font></right>: ";
     echo $gameType->aggregatedStats->totalChampionKills . "<br>";
+    echo "w/l: ". $gameType->wins . "/" . $gameType->losses."<br>";
   }
 }
 
