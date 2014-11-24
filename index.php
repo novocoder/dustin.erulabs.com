@@ -18,27 +18,29 @@
 <body>
 
 <b>
+<br>
 
 <font size=9><center>Find Summoner Stuff Hurr</center></font>
 <script src="script.js"></script>
 
+<br><br>
 
 <form action="index.php" method="post">
 
-	Name:
+	Search A Summoner:
 
 	<br>
 		<input type="text" name="name">
-	<br>
+	
 		<input type="submit" value="submit">
 
 
 </form>
 
-<br>
 
 
-Hello
+<hr>
+Hello,
 <?php
 
 	if (!isset($_POST["name"])){
@@ -46,6 +48,7 @@ Hello
 	} else {
 		echo $_POST["name"];
 }         
+
 
 require 'championlist.php';
 
@@ -63,16 +66,18 @@ $gameAPI = $api->game();
 $name = $_POST['name'];
 
 if($name == "") {
-  exit("No name provided!");
+  exit("Enter Summoner Name");
 }
+
 
 $summoner = $summonerAPI->info($name);
 
 $recentGames = $gameAPI->recent($summoner->id);
-
+echo " - Level: ";
 echo $summoner->summonerLevel;
 
-
+echo "<hr>";
+echo "<br>";
 echo "<br>";
 
 /*Places a "0" in return if there is no value */
@@ -88,7 +93,7 @@ function fixlolnum($lolnumber) {
 
 
 
-/*Fixes Character names with spaces */
+/*Fixes Character names with spaces, periods, and other special characters */
 
 function fixlolname($lolname) {
 	$lolname = str_replace(" ", "", $lolname);
