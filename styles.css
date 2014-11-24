@@ -1,10 +1,10 @@
 
-body {
-background-color: #000011;
-color: #ffffff;
+BODY {
+background-image : url(/images/zwartevilt.png);
+background-repeat : repeat;
+background-position : 50% 50%;
+background-attachment : fixed;
+color : #ffffff;
 }
 
-#Victory {
-	color: green;
-}
 
