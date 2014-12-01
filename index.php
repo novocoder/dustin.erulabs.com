@@ -69,13 +69,16 @@ $myStats = $statsAPI->summary($summoner->id);
 $gameTypes = $myStats->playerStatSummaries;
 
 // Debug mode: print out the stats array
-//print_r($gameTypes);
+#print_r($gameTypes);
 
 foreach($gameTypes as $gameType) {
   if ($gameType->playerStatSummaryType == 'Unranked' or
   $gameType->playerStatSummaryType == 'RankedSolo5x5' or
+  $gameType->playerStatSummaryType == 'RankedTeam3x3' or
+  $gameType->playerStatSummaryType == 'unranked3x3' or
   $gameType->playerStatSummaryType == 'RankedTeam5x5') {
-    echo "Total ".$gameType->playerStatSummaryType." <font color=red><right>Kills</font></right>: ";
+    echo "Total ".$gameType->playerStatSummaryType."
+    <font color=red><right>Kills</font></right>: ";
     echo $gameType->aggregatedStats->totalChampionKills . "<br>";
     echo "w/l: ". $gameType->wins . "/" . $gameType->losses."<br>";
   }
@@ -87,7 +90,8 @@ echo "<hr>";
 echo "<br>";
 echo "<br>";
 
-/*Places a "0" in return if there is no value */
+/*Places a "0" in return
+if there is no value */
 
 
 function fixlolnum($lolnumber) {
@@ -100,7 +104,8 @@ function fixlolnum($lolnumber) {
 
 
 
-/*Fixes Character names with spaces, periods, and other special characters */
+/*Fixes Character names with spaces,
+periods, and other special characters */
 
 function fixlolname($lolname) {
 	$lolname = str_replace(" ", "", $lolname);
@@ -110,7 +115,7 @@ function fixlolname($lolname) {
 }
 
 
-// 	Get details on LAST game
+// 	Get details on LASTEST game
 //
 $games = $recentGames->games;
 $game=array_shift($games);
@@ -144,10 +149,20 @@ echo "<br><br>\n\n";
 #print_r($recentGames->games[0]->stats);
 ?>
 <br>
+
+<style>
+<hr {
+  border-top: 1px dotted #f00;
+    color: #fff;
+      background-color: #fff;
+        height: 7px;
+	  width:100%;
+	  }
+>	  </style>
 <?PHP
 
 //
-// Get details on the next 9 previous games
+// Get details on the next9 previous games
 foreach ($games as $gameNum => $game) {
 
 	$championId = $game->championId;
