@@ -136,7 +136,6 @@ echo "/";
 fixlolnum($game->stats->numDeaths);
 echo "/";
 fixlolnum($game->stats->assists);
-fixlolnum($game->stats->revisionDateStr);
 	
 echo " - ";
 $won = $game->stats->win;
