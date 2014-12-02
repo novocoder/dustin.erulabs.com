@@ -61,7 +61,11 @@ $summoner = $summonerAPI->info($name);
 $recentGames = $gameAPI->recent($summoner->id);
 echo " - Level: ";
 echo $summoner->summonerLevel;
+?>
+<br><br>
+<?php
 
+echo "<img src='http://avatar.leagueoflegends.com/na/". ($name) . ".png' >"  ;	
 echo "<br>Summoner stats: <pre>";
 // Get the stats summary by summoner ID
 $myStats = $statsAPI->summary($summoner->id);
@@ -132,6 +136,7 @@ echo "/";
 fixlolnum($game->stats->numDeaths);
 echo "/";
 fixlolnum($game->stats->assists);
+fixlolnum($game->stats->revisionDateStr);
 	
 echo " - ";
 $won = $game->stats->win;
@@ -150,15 +155,7 @@ echo "<br><br>\n\n";
 ?>
 <br>
 
-<style>
-<hr {
-  border-top: 1px dotted #f00;
-    color: #fff;
-      background-color: #fff;
-        height: 7px;
-	  width:100%;
-	  }
->	  </style>
+<hr>
 <?PHP
 
 //
