@@ -5,6 +5,11 @@ background-repeat : repeat;
 background-position : 50% 50%;
 background-attachment : fixed;
 color : #ffffff;
+-webkit-filter: invert(100%);
 }
 
-#<font size=9><center>Kills</center></font>
+
+#summonerstats {
+	color: yellow;
+	border: 100px;
+	}

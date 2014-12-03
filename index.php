@@ -1,14 +1,30 @@
 <?PHP
-
+require("simphp-master/simphp.php");
 ?>
 <html>
+
 <head>
 	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
+
 <body>
 <b>
 <br>
-<font size=9><center>Find Summoner Stuff Hurr</center></font>
+
+<div style="text-align:right;">
+<?php
+echo $info;
+?>
+
+</div>
+
+
+<h1>
+
+<font size=9><center>What Do You Seek, Summoner?</center></font>
+
+</h1>
+
 <script src="script.js"></script>
 <br><br>
 <form action="index.php" method="post">
@@ -19,12 +35,10 @@
 		<input type="text" name="name">
 	
 		<input type="submit" value="submit">
+		
 
 
 </form>
-
-
-
 <hr>
 Hello,
 <?php
@@ -63,10 +77,14 @@ echo " - Level: ";
 echo $summoner->summonerLevel;
 ?>
 <br><br>
+
+
+<div id="Summonerstats">
+
 <?php
 
 echo "<img src='http://avatar.leagueoflegends.com/na/". ($name) . ".png' >"  ;	
-echo "<br>Summoner stats: <pre>";
+echo "<br><br>Summoner stats: <pre>";
 // Get the stats summary by summoner ID
 $myStats = $statsAPI->summary($summoner->id);
 
@@ -117,6 +135,10 @@ function fixlolname($lolname) {
 	$lolname = str_replace(".", "", $lolname);
 	return $lolname;
 }
+
+?>
+</div>
+<?php
 
 
 // 	Get details on LASTEST game
@@ -188,13 +210,20 @@ foreach ($games as $gameNum => $game) {
 	  echo "<font color='green'>Victory</font>";
 	}
 	else {
-	  echo "<font color='red'>Losed</font>";
+	  echo "<font color='red'>Defeat</font>";
 
 	}
-	echo "<br><br>\n\n";
-}
 	
+	if (fixlolnum($game->stats->numDeaths) > fixlolnum($game->stats->championsKilled)+4) {
+	echo " ...Goddamn feeder.";
+	}
+	if ((fixlolnum($game->stats->championsKilled) > fixlolnum($game->stats->numDeaths)+4) && $won == 1) {
+	echo " ...Good job!";
+	} 
 
+	echo "<br><br>\n\n";
+
+}
 #print_r($recentGames->games[0]->stats);
 
 #foreach ($champions as $championId => $championName) {
