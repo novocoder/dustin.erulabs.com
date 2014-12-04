@@ -153,11 +153,11 @@ echo "<img src='/images/" . fixlolname($championName) . "Square.png'>   ";
 echo $championName;
 echo " - ";
 
-fixlolnum($game->stats->championsKilled);
+echo fixlolnum($game->stats->championsKilled);
 echo "/";
-fixlolnum($game->stats->numDeaths);
+echo fixlolnum($game->stats->numDeaths);
 echo "/";
-fixlolnum($game->stats->assists);
+echo fixlolnum($game->stats->assists);
 	
 echo " - ";
 $won = $game->stats->win;
@@ -189,17 +189,17 @@ foreach ($games as $gameNum => $game) {
 	
 	echo "<!---#$championId--->";
 
-	echo "<img src='/images/" . fixlolname($championName) . "Square.png' > "  ;	
+	echo "<img src='images/" . fixlolname($championName) . "Square.png' > "  ;	
 
 	echo $championName;
 
 	echo " - ";
 
-	fixlolnum($game->stats->championsKilled);
-	echo "/";
-	fixlolnum($game->stats->numDeaths);
-	echo "/";
-	fixlolnum($game->stats->assists);
+	echo fixlolnum($game->stats->championsKilled);
+		echo "/";
+	echo fixlolnum($game->stats->numDeaths);
+		echo "/";
+	echo fixlolnum($game->stats->assists);
 	
 	
 	echo " - ";
@@ -213,19 +213,21 @@ foreach ($games as $gameNum => $game) {
 	  echo "<font color='red'>Defeat</font>";
 
 	}
-	
+
+#$test = 19;
+#if ($test == 19) {	
 	if (fixlolnum($game->stats->numDeaths) > fixlolnum($game->stats->championsKilled)+4) {
-	echo " ...Goddamn feeder.";
+	echo " ...Goddamn feeder";
 	}
 	if ((fixlolnum($game->stats->championsKilled) > fixlolnum($game->stats->numDeaths)+4) && $won == 1) {
-	echo " ...Good job!";
+	echo " ...Good job";
 	} 
 
 	echo "<br><br>\n\n";
 
 }
 #print_r($recentGames->games[0]->stats);
-
+#
 #foreach ($champions as $championId => $championName) {
 #	echo "<img src='/images/" . fixlolname($championName) . "Square.png'>";	
 #}
