@@ -8,5 +8,10 @@ color : #ffffff;
 
 }
 
-
+.foo {
+	display:inline-block;
+	width: width;
+	height: height;
+	margin: 5px 5px 5px 5px;
+}		
 

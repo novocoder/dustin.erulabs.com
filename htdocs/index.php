@@ -75,12 +75,14 @@ echo $summoner->summonerLevel;
 ?>
 <br><br>
 
-
-<div id="Summonerstats">
+</div>
 
 <?php
 
+echo "<div id="Iconborder">"
 echo "<img src='http://avatar.leagueoflegends.com/na/". ($name) . ".png' >"  ;	
+
+echo "</div>"
 echo "<br><br>Summoner stats: <pre>";
 // Get the stats summary by summoner ID
 $myStats = $statsAPI->summary($summoner->id);
@@ -134,7 +136,6 @@ function fixlolname($lolname) {
 }
 
 ?>
-</div>
 <?php
 
 
