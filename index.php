@@ -65,9 +65,6 @@ $staticDataApi = $api->staticdata();
 
 $name = $_POST['name'];
 
-if($name == "") {
-  exit("Enter Summoner Name");
-}
 
 
 $summoner = $summonerAPI->info($name);
@@ -147,6 +144,8 @@ $games = $recentGames->games;
 $game=array_shift($games);
 $championId = $game->championId;
 $championName = $champions[$championId];
+	$championDeaths = $game->stats->numDeaths;
+	$championKills = $game->stats->championsKilled;
 	
 echo "<!---#$championId--->";
 echo "<img src='/images/" . fixlolname($championName) . "Square.png'>   ";	
@@ -168,6 +167,15 @@ if ($won == 1){
 else {
   echo "<font color='red'>Defeat</font>";
 }
+	if ($championDeaths > $championKills) {
+	echo " ...Goddamn feeder";
+	}
+	if ($championKills > $championDeaths +4 && $won == 1 ) {
+	echo " ...Good job";
+	} 
+	if ($championKills > $championDeaths +8 && $won == 1 ) {
+	echo "<font color='yellow'> - NICE! -</font>";
+	}
 
 #print_r($summoner);
 echo "<br><br>\n\n";
@@ -185,6 +193,9 @@ foreach ($games as $gameNum => $game) {
 
 	$championId = $game->championId;
 	
+	$championDeaths = $game->stats->numDeaths;
+	$championKills = $game->stats->championsKilled;
+
 	$championName = $champions[$championId];
 	
 	echo "<!---#$championId--->";
@@ -216,14 +227,17 @@ foreach ($games as $gameNum => $game) {
 
 #$test = 19;
 #if ($test == 19) {	
-	if (fixlolnum($game->stats->numDeaths) > fixlolnum($game->stats->championsKilled)+4) {
+	
+	if ($championDeaths > $championKills) {
 	echo " ...Goddamn feeder";
 	}
-	if ((fixlolnum($game->stats->championsKilled) > fixlolnum($game->stats->numDeaths)+4) && $won == 1) {
+	if ($championKills > $championDeaths +4 && $won == 1 ) {
 	echo " ...Good job";
 	} 
-
-	echo "<br><br>\n\n";
+	if ($championKills > $championDeaths +8 && $won == 1 ) {
+	echo "<font color='yellow'> - NICE! -</font>";
+	}
+	echo "<br><br>\n\n\n";
 
 }
 #print_r($recentGames->games[0]->stats);

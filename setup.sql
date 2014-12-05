@@ -2,9 +2,9 @@ CREATE DATABASE dustindb;
 
 USE dustindb;
 
-CREATE USER 'dustin'@'localhost' IDENTIFIED BY 'qweasd';
+CREATE USER 'dustinsite'@'localhost' IDENTIFIED BY 'qweasd';
 
-GRANT ALL PRIVILEGES ON dustindb.* TO 'dustin'@'localhost';
+GRANT ALL PRIVILEGES ON dustindb.* TO 'dustinsite'@'localhost';
 
 CREATE TABLE visitDATA (
 	ip VARCHAR (16),
