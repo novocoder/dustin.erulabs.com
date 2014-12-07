@@ -12,3 +12,9 @@ CREATE TABLE visitDATA (
 	id INT (11) NOT NULL auto_increment,
 	primary KEY (id)
 );
+
+CREATE TABLE searchDATA (
+	name VARCHAR (16),
+	summonerid INT (11),
+
+

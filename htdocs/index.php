@@ -1,5 +1,24 @@
 <?PHP
-require("simphp-master/simphp.php");
+$connection = mysqli_connect('localhost','dustinsite','qweasd','dustindb');
+if($connection == false) {
+	echo mysqli_connect_error();
+}
+function db_select($query) {
+        global $connection;
+	$rows = array();
+        $result = mysqli_query($connection,$query);
+
+        // If query failed, return `false`
+        if($result === false) {
+            return false;
+        }
+
+        // If query was successful, retrieve all the rows into an array
+        while ($row = mysqli_fetch_assoc($result)) {
+            $rows[] = $row;
+        }
+        return $rows;
+    }
 ?>
 <html>
 
@@ -13,7 +32,44 @@ require("simphp-master/simphp.php");
 
 <div style="text-align:right;">
 <?php
-echo $info;
+$results = db_select("SELECT * FROM visitDATA");
+#print_r($results);
+
+
+//Have you visited before?
+$found = false;
+$totalvisits = 1;
+foreach ($results as $visitorDATA){
+	$totalvisits = $totalvisits + $visitorDATA["visits"];
+
+//print_r ($visitorDATA);
+//	echo $visitorDATA["ip"];
+//	echo "<br>";
+//if this record is for your address 
+	if ($visitorDATA["ip"] == $_SERVER['REMOTE_ADDR']){
+		$found = true;
+		$visits = $visitorDATA["visits"];
+	}
+}
+
+if ($found){
+	$visits = $visits+1;
+	//update
+	$update = mysqli_query($connection, "UPDATE `visitDATA` SET `visits`=".$visits." WHERE `ip`='".$_SERVER['REMOTE_ADDR']."'");
+} else {
+	//insert
+	$visits = 1;
+	$insert = mysqli_query($connection, "INSERT INTO `visitDATA` (`ip`,`visits`) VALUES ('". $_SERVER['REMOTE_ADDR'] ."',1)");
+}
+
+
+
+//echo $_SERVER['REMOTE_ADDR'];
+echo "Your visits: ".$visits;
+echo "<br>";
+echo "Unique visits: " . count($results);
+echo "<br>";
+echo "Total: ".$totalvisits;
 ?>
 
 </div>
@@ -27,6 +83,9 @@ echo $info;
 
 <script src="script.js"></script>
 <br><br>
+
+
+
 <form action="index.php" method="post">
 
 	Search A Summoner:
@@ -40,7 +99,7 @@ echo $info;
 
 </form>
 <hr>
-Hello,
+Boobie sir,
 <?php
 
 	if (!isset($_POST["name"])){
@@ -79,10 +138,8 @@ echo $summoner->summonerLevel;
 
 <?php
 
-echo "<div id="Iconborder">"
 echo "<img src='http://avatar.leagueoflegends.com/na/". ($name) . ".png' >"  ;	
 
-echo "</div>"
 echo "<br><br>Summoner stats: <pre>";
 // Get the stats summary by summoner ID
 $myStats = $statsAPI->summary($summoner->id);
