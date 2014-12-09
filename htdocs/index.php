@@ -215,8 +215,10 @@ echo "/";
 echo fixlolnum($game->stats->numDeaths);
 echo "/";
 echo fixlolnum($game->stats->assists);
-	
+
+
 echo " - ";
+
 $won = $game->stats->win;
 
 if ($won == 1){
@@ -234,13 +236,32 @@ else {
 	if ($championKills > $championDeaths +8 && $won == 1 ) {
 	echo "<font color='yellow'> - NICE! -</font>";
 	}
+echo "<br>";
+echo "<pre>";
+echo "Stats:";
 
+echo "<br><br><br>";
+// Expanded Stats
+
+
+
+
+echo "Total Damage:  ";
+echo fixlolnum($game->stats->totalDamageDealt);
+echo "     Damage to Champions:  ";
+echo fixlolnum($game->stats->totalDamageDealtToChampions);
+echo "     Gold:  ";
+echo fixlolnum($game->stats->goldEarned);
+echo"      Minions Killed:  ";
+echo fixlolnum($game->stats->minionsKilled);
+
+
+echo "</pre>";
 #print_r($summoner);
 echo "<br><br>\n\n";
 
 #print_r($recentGames->games[0]->stats);
 ?>
-<br>
 
 <hr>
 <?PHP
