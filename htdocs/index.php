@@ -99,7 +99,9 @@ echo "Total: ".$totalvisits;
 
 </form>
 <hr>
-Boobie sir,
+
+Hello,
+
 <?php
 
 	if (!isset($_POST["name"])){
@@ -134,13 +136,13 @@ echo $summoner->summonerLevel;
 ?>
 <br><br>
 
-</div>
 
+<div id="summstats" >
 <?php
 
 echo "<img src='http://avatar.leagueoflegends.com/na/". ($name) . ".png' >"  ;	
 
-echo "<br><br>Summoner stats: <pre>";
+echo "<br><br><h2> Summoner stats:</h2><br>";
 // Get the stats summary by summoner ID
 $myStats = $statsAPI->summary($summoner->id);
 
@@ -162,11 +164,8 @@ foreach($gameTypes as $gameType) {
   }
 }
 
-echo "</pre>";
 
-echo "<hr>";
-echo "<br>";
-echo "<br>";
+
 
 /*Places a "0" in return
 if there is no value */
@@ -174,9 +173,9 @@ if there is no value */
 
 function fixlolnum($lolnumber) {
 	if ($lolnumber == ''){
-	  echo "0";
+	  return "0";
 	} else {
-	  echo $lolnumber;
+	  return $lolnumber;
 	}
 }
 
@@ -193,8 +192,13 @@ function fixlolname($lolname) {
 }
 
 ?>
+</div>
 <?php
 
+echo "<hr>";
+echo "<pre>";
+echo "Latest Game: ";
+echo "<br><br>";
 
 // 	Get details on LASTEST game
 //
@@ -236,9 +240,8 @@ else {
 	if ($championKills > $championDeaths +8 && $won == 1 ) {
 	echo "<font color='yellow'> - NICE! -</font>";
 	}
-echo "<br>";
-echo "<pre>";
-echo "Stats:";
+echo "<br><br><br>";
+echo "                        Stats:";
 
 echo "<br><br><br>";
 // Expanded Stats
@@ -246,24 +249,29 @@ echo "<br><br><br>";
 
 
 
-echo "Total Damage:  ";
+echo "                               	     Total Damage:  ";
 echo fixlolnum($game->stats->totalDamageDealt);
 echo "     Damage to Champions:  ";
 echo fixlolnum($game->stats->totalDamageDealtToChampions);
 echo "     Gold:  ";
 echo fixlolnum($game->stats->goldEarned);
 echo"      Minions Killed:  ";
-echo fixlolnum($game->stats->minionsKilled);
+$cs = fixlolnum($game->stats->minionsKilled) + fixlolnum($game->stats->neutralMinionsKilled);
 
 
-echo "</pre>";
+
+echo $cs;
+
 #print_r($summoner);
-echo "<br><br>\n\n";
+echo "\n\n";
 
 #print_r($recentGames->games[0]->stats);
 ?>
 
 <hr>
+
+Recent Games:
+<br></pre><br>
 <?PHP
 
 //
@@ -276,7 +284,6 @@ foreach ($games as $gameNum => $game) {
 	$championKills = $game->stats->championsKilled;
 
 	$championName = $champions[$championId];
-	
 	echo "<!---#$championId--->";
 
 	echo "<img src='images/" . fixlolname($championName) . "Square.png' > "  ;	

@@ -15,3 +15,9 @@ color : #ffffff;
 	margin: 5px 5px 5px 5px;
 }		
 
+#summstats {
+	text-align:center;
+	padding:30;
+	float:none
+}
+
