@@ -31,7 +31,41 @@ function db_select($query) {
 <br>
 
 <div style="text-align:right;">
+
 <?php
+
+//NA RIOT SERVER STATUS//
+
+echo "NA Server Status: ";
+
+/* our simple php ping function */
+function ping($host)
+	  {
+		 exec(sprintf('ping -c 1 -W 5 %s', escapeshellarg($host)), $res, $rval);
+	 return $rval === 0;
+	  }
+
+/* check if the host is up
+	 $host can also be an ip address */
+
+
+$host = '216.52.241.254';
+$up = ping($host);
+
+/* optionally display either a red or green image to signify the server status */
+
+
+	 echo '<img src="'.($up ? 'on' : 'off').'.jpg" alt="'.($up ? 'up' : 'down').'" />';
+
+?>
+
+<br>	
+
+<?php
+
+
+// VISITOR COUNTER///
+
 $results = db_select("SELECT * FROM visitDATA");
 #print_r($results);
 
@@ -143,6 +177,8 @@ echo $summoner->summonerLevel;
 echo "<img src='http://avatar.leagueoflegends.com/na/". ($name) . ".png' >"  ;	
 
 echo "<br><br><h2> Summoner stats:</h2><br>";
+
+//
 // Get the stats summary by summoner ID
 $myStats = $statsAPI->summary($summoner->id);
 
@@ -160,7 +196,7 @@ foreach($gameTypes as $gameType) {
     echo "Total ".$gameType->playerStatSummaryType."
     <font color=red><right>Kills</font></right>: ";
     echo $gameType->aggregatedStats->totalChampionKills . "<br>";
-    echo "w/l: ". $gameType->wins . "/" . $gameType->losses."<br>";
+    echo "Wins: ". $gameType->wins . "     Losses:" . $gameType->losses."<br>";
   }
 }
 
@@ -206,9 +242,24 @@ $games = $recentGames->games;
 $game=array_shift($games);
 $championId = $game->championId;
 $championName = $champions[$championId];
-	$championDeaths = $game->stats->numDeaths;
-	$championKills = $game->stats->championsKilled;
-	
+$championDeaths = $game->stats->numDeaths;
+$championKills = $game->stats->championsKilled;
+$gameDate = $game->createDate;
+
+
+//Date of Game Played//
+
+$epoch = $gameDate;
+echo date('M/d/Y', $epoch);
+//echo gmdate('M/d/Y', $epoch);
+
+//$epoch = $gameDate;
+//$dt = new DateTime("@$epoch");
+//echo $dt->format('M/d/Y');
+
+//\\\\\\\\\\\\\\\\\\\\\\//
+
+
 echo "<!---#$championId--->";
 echo "<img src='/images/" . fixlolname($championName) . "Square.png'>   ";	
 echo $championName;
@@ -219,7 +270,6 @@ echo "/";
 echo fixlolnum($game->stats->numDeaths);
 echo "/";
 echo fixlolnum($game->stats->assists);
-
 
 echo " - ";
 
@@ -244,6 +294,8 @@ echo "<br><br><br>";
 echo "                        Stats:";
 
 echo "<br><br><br>";
+
+
 // Expanded Stats
 
 
@@ -311,9 +363,9 @@ foreach ($games as $gameNum => $game) {
 
 	}
 
-#$test = 19;
-#if ($test == 19) {	
-	
+
+// Game Result Comments//
+
 	if ($championDeaths > $championKills) {
 	echo " ...Goddamn feeder";
 	}

@@ -20,7 +20,7 @@ CREATE TABLE championDATA (
 	damageTYPE VARCHAR (8),
 	lane VARCHAR (8),
 
-
+);
 
 
 
