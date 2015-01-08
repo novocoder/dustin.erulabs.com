@@ -29,7 +29,13 @@ function db_select($query) {
 <body>
 <b>
 <br>
-
+    <div class="onoffswitch">
+        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+	    <label class="onoffswitch-label" for="myonoffswitch">
+	        <span class="onoffswitch-inner"></span>
+		    <span class="onoffswitch-switch"></span>
+		        </label>
+			    </div> 
 <div style="text-align:right;">
 
 <?php
@@ -44,10 +50,6 @@ function ping($host)
 		 exec(sprintf('ping -c 1 -W 5 %s', escapeshellarg($host)), $res, $rval);
 	 return $rval === 0;
 	  }
-
-/* check if the host is up
-	 $host can also be an ip address */
-
 
 $host = '216.52.241.254';
 $up = ping($host);
@@ -66,7 +68,7 @@ $up = ping($host);
 
 // VISITOR COUNTER///
 
-$results = db_select("SELECT * FROM visitDATA");
+$results = db_select("SELECT * FROMvisitDATA");
 #print_r($results);
 
 
@@ -143,6 +145,7 @@ Hello,
 	} else {
 		echo $_POST["name"];
 }         
+
 
 
 require 'championlist.php';
@@ -388,7 +391,7 @@ echo '<pre>';
 //print_r($staticDataApi->getItems());
 echo '</pre>';
 
-
+require 'comments.php';
 ?>
 </body>
 </html>
