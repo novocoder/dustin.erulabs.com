@@ -13,14 +13,14 @@ CREATE TABLE visitDATA (
 	primary KEY (id)
 );
 
-CREATE TABLE championDATA (
-	name VARCHAR (16),
-	id INT (11),
-	championid INT (11),
-	damageTYPE VARCHAR (8),
-	lane VARCHAR (8),
+#CREATE TABLE championDATA (
+#	name VARCHAR (16),
+#	id INT (11),
+#	championid INT (11),
+#	damageTYPE VARCHAR (8),
+#	lane VARCHAR (8),
 
-);
+#);
 
 
 

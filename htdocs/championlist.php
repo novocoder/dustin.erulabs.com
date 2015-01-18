@@ -123,5 +123,6 @@ $champions[266] = "Aatrox";
 $champions[267] = "Nami";
 $champions[268] = "Azir";
 $champions[412] = "Thresh";
+$champions[421] = "RekSai";
 $champions[429] = "Kalista";
 ?>      
