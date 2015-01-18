@@ -115,7 +115,7 @@ echo "Total: ".$totalvisits;
 
 <h1>
 
-<font size=9><center>What Do You Seek, Summoner??</center></font>
+<font size=9><center>What Do You Seek, Summoner??????</center></font>
 
 </h1>
 
