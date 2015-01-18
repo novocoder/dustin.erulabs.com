@@ -6,7 +6,9 @@ require 'championlist.php';
 require 'vendor/autoload.php';
 use LeagueWrap\Api;
 
-$api = new Api('9249495a-ec4c-4026-bb9c-a7648103bd41');
+require '../secretFile.php';
+
+$api = new Api($LEAGUE_APIKEY);
 
 $summonerAPI = $api->summoner();
 $gameAPI = $api->game();
