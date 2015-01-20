@@ -149,10 +149,9 @@ Hello,
 		require 'characterDisplay.php';
 }         
 
-$connection = mysqli_connect('localhost','dustinsite','qweasd','dustindb');
 function sanitize($input) {
-	//$output = mysql_real_escape_string($input, $connection);
-	return $input;
+	global $connection;
+	$output = mysqli_real_escape_string($connection, $input);
 	return $output;
 }	
 
