@@ -158,7 +158,12 @@ function sanitize($input) {
 if (isset($_POST["commentname"]) && isset($_POST["words"])) {
 
 	$insert = mysqli_query($connection, "INSERT INTO `comments` (`name`,`words`) VALUES ('".sanitize($_POST['commentname'])."','".sanitize($_POST['words'])."')");
-}	
+}
+
+echo "<br><br>Comments:<br><br>";
+	
+
+
 require 'comments.php';
 
 
