@@ -1,5 +1,5 @@
 <?PHP
-$connection = mysqli_connect('localhost','dustinsite','qweasd','dustindb');
+$connection = mysqli_connect('localhost','dustinsite','sh33quil','dustindb');
 if($connection == false) {
 	echo mysqli_connect_error();
 }

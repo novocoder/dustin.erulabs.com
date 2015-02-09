@@ -2,7 +2,7 @@ CREATE DATABASE dustindb;
 
 USE dustindb;
 
-CREATE USER 'dustinsite'@'localhost' IDENTIFIED BY 'qweasd';
+CREATE USER 'dustinsite'@'localhost' IDENTIFIED BY 'sh33quil';
 
 GRANT ALL PRIVILEGES ON dustindb.* TO 'dustinsite'@'localhost';
 
