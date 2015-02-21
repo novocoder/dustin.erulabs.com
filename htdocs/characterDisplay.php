@@ -27,6 +27,11 @@ echo $summoner->summonerLevel;
 <div id="summstats" >
 <?php
 
+$insert = mysqli_query($connection, "INSERT INTO `recentSearches` (`name`) VALUES ('".$name."')");
+
+$summoner = $summonerAPI->info($name);
+$recentGames = $gameAPI->recent($summoner->id);
+
 echo "<img src='http://avatar.leagueoflegends.com/na/". ($name) . ".png' >"  ;	
 
 echo "<br><br><h2> Summoner stats:</h2><br>";
@@ -101,10 +106,9 @@ $gameDate = $game->createDate;
 
 
 //Date of Game Played//
-
-$epoch = $gameDate;
-echo date('M/d/Y', $epoch);
-//echo gmdate('M/d/Y', $epoch);
+//$epoch = $gameDate
+//$dt = new DateTime("@$epoch");
+//echo $dt->format('y-m-d H:i:s');
 
 //$epoch = $gameDate;
 //$dt = new DateTime("@$epoch");

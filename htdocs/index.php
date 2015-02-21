@@ -6,20 +6,21 @@ if($connection == false) {
 function db_select($query) {
         global $connection;
 	$rows = array();
-        $result = mysqli_query($connection,$query);
+        $results = mysqli_query($connection,$query);
 
         // If query failed, return `false`
-        if($result === false) {
+        if($results === false) {
             return false;
         }
 
         // If query was successful, retrieve all the rows into an array
-        while ($row = mysqli_fetch_assoc($result)) {
+        while ($row = mysqli_fetch_assoc($results)) {
             $rows[] = $row;
         }
         return $rows;
     }
 ?>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -137,7 +138,21 @@ echo "Total: ".$totalvisits;
 
 </form>
 <hr>
-
+<?PHP
+echo "Most recent searches:<br>";
+$results = db_select("SELECT DISTINCT name FROM recentSearches ORDER BY id DESC LIMIT 5");
+$totalNumberOfNames = count($results);
+// If there is one thing in the list - its id is 0. 2... id 1... etc.
+$positionOfLastItemInList = $totalNumberOfNames - 1;
+foreach ($results as $recentName) {
+echo $recentName['name'];
+//if we are not the last item, add ,
+if($recentName['name'] != $results[$positionOfLastItemInList]['name']) {
+echo ", ";
+}
+};
+echo "<br><br>";
+?>
 Hello,
 
 <?php
