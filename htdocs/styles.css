@@ -9,7 +9,8 @@ background-repeat : repeat;
 background-position : 50% 50%;
 background-attachment : fixed;
 color : #ffffff;
-
+font-family: "helvetica";
+font-size: .9em;
 }
 
 .foo {
@@ -22,7 +23,8 @@ color : #ffffff;
 #summstats {
 	text-align:center;
 	padding:30;
-	float:none
+	float:none;
+	margin-bottom: 3em;
 }
 
 #summicon {
@@ -31,6 +33,48 @@ color : #ffffff;
 	
 }
 
+
+.toggle-gallery {
+  display: none;
+}
+
+.toggle-gallery + label {
+  cursor: pointer;
+  display: block;
+  font-weight: bold;
+  line-height: 21px;
+  margin-bottom: 5px;
+}
+
+.toggle-gallery + label + div {
+  display: none;
+  margin-bottom: 10px;
+}
+
+.toggle-gallery:checked + label + div {
+  display: block;
+}
+
+.toggle-gallery + label:before {
+  background-color: #4F5150;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  color: #FFFFFF;
+  content: "+";
+  display: block;
+  float: left;
+  font-weight: bold;
+  height: 20px;
+  line-height: 20px;
+  margin-right: 5px;
+  text-align: center;
+  width: 20px;
+}
+
+.toggle-gallery:checked + label:before {
+  content: "\2212";
+} 
 
 
 

@@ -54,7 +54,7 @@ foreach($gameTypes as $gameType) {
     echo "Total ".$gameType->playerStatSummaryType."
     <font color=red><right>Kills</font></right>: ";
     echo $gameType->aggregatedStats->totalChampionKills . "<br>";
-    echo "Wins: ". $gameType->wins . "     Losses:" . $gameType->losses."<br>";
+    echo "Wins: ". $gameType->wins . "     Losses: " . $gameType->losses."<br>";
   }
 }
 
@@ -166,6 +166,8 @@ echo "     Gold:  ";
 echo fixlolnum($game->stats->goldEarned);
 echo"      Minions Killed:  ";
 $cs = fixlolnum($game->stats->minionsKilled) + fixlolnum($game->stats->neutralMinionsKilled);
+echo "     Wards Placed:  ";
+echo fixlolnum($game->stats->wardPlaced);
 
 
 
@@ -176,11 +178,10 @@ echo "\n\n";
 
 #print_r($recentGames->games[0]->stats);
 ?>
-
 <hr>
 
 Recent Games:
-<br></pre><br>
+</pre>
 <?PHP
 
 //
