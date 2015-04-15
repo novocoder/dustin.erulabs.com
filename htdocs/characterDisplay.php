@@ -89,15 +89,9 @@ function fixlolname($lolname) {
 </div>
 <?php
 
-echo "<hr>";
-echo "<pre>";
-echo "Latest Game: ";
 echo "<br><br>";
 
-// 	Get details on LASTEST game
-//
 $games = $recentGames->games;
-$game=array_shift($games);
 $championId = $game->championId;
 $championName = $champions[$championId];
 $championDeaths = $game->stats->numDeaths;
@@ -116,76 +110,24 @@ $gameDate = $game->createDate;
 
 //\\\\\\\\\\\\\\\\\\\\\\//
 
-echo "<br>";
-echo "<!---#$championId--->";
-echo "<img src='/images/" . fixlolname($championName) . "Square.png'>   ";	
-echo $championName;
-echo " - ";
-
-echo fixlolnum($game->stats->championsKilled);
-echo "/";
-echo fixlolnum($game->stats->numDeaths);
-echo "/";
-echo fixlolnum($game->stats->assists);
-
-echo " - ";
-
 $won = $game->stats->win;
 
-if ($won == 1){
-  echo "<font color='green'>Victory</font>";
-}
-else {
-  echo "<font color='red'>Defeat</font>";
-}
-	if ($championDeaths > $championKills) {
-	echo " ...Goddamn feeder";
-	}
-	if ($championKills > $championDeaths +4 && $won == 1 ) {
-	echo " ...Good job";
-	} 
-	if ($championKills > $championDeaths +8 && $won == 1 ) {
-	echo "<font color='yellow'> - NICE! -</font>";
-	}
-echo "<br><br><br>";
-echo "                        Stats:";
-
-echo "<br><br><br>";
-
-
-// Expanded Stats
-
-
-
-
-echo "                               	     Total Damage:  ";
-echo fixlolnum($game->stats->totalDamageDealt);
-echo "     Damage to Champions:  ";
-echo fixlolnum($game->stats->totalDamageDealtToChampions);
-echo "     Gold:  ";
-echo fixlolnum($game->stats->goldEarned);
-echo"      Minions Killed:  ";
 $cs = fixlolnum($game->stats->minionsKilled) + fixlolnum($game->stats->neutralMinionsKilled);
-echo "     Wards Placed:  ";
-echo fixlolnum($game->stats->wardPlaced);
 
 
-
-echo $cs;
 
 #print_r($summoner);
 echo "\n\n";
 
 #print_r($recentGames->games[0]->stats);
 ?>
+</div>
 <hr>
-
 Recent Games:
-</pre>
+<br><br>
+<div class="gameContainer";
 <?PHP
 
-//
-// Get details on the next9 previous games
 foreach ($games as $gameNum => $game) {
 
 	$championId = $game->championId;
@@ -222,7 +164,7 @@ foreach ($games as $gameNum => $game) {
 	}
 
 
-// Game Result Comments//
+// Extended Stats & Game "comment"//
 
 	if ($championDeaths > $championKills) {
 	echo " ...Goddamn feeder";
@@ -234,8 +176,24 @@ foreach ($games as $gameNum => $game) {
 	echo "<font color='yellow'> - NICE! -</font>";
 	}
 	echo "<br><br>\n\n\n";
-
+	echo "<pre>";
+	echo "Total Damage: ";
+	echo fixlolnum($game->stats->totalDamageDealt);
+	echo "	Damage to Champions:	";
+	echo fixlolnum($game->stats->totalDamageDealtToChampions);
+	echo "	Gold:	";
+	echo fixlolnum($game->stats->goldEarned);
+	echo "	Minions Killed:	";
+	$cs = fixlolnum($game->stats->minionsKilled) + fixlolnum($game->stats->neutralMinionsKilled);
+	echo "$cs";
+	echo "	Wards Placed:	";
+	echo fixlolnum($game->stats->wardPlaced);
+	echo "</pre>";
+	
+	echo "<br><br>\n\n\n";
 }
+echo "</div>";
+	echo "<hr>";
 #print_r($recentGames->games[0]->stats);
 #
 #foreach ($champions as $championId => $championName) {
@@ -247,4 +205,3 @@ echo '<pre>';
 echo '</pre>';
 
 ?>
-
