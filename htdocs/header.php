@@ -120,13 +120,29 @@ echo "Total: ".$totalvisits;
 
 <h1>
 
-<font size=9><center>What Do You Seek, Summoner?</center></font>
+<center>LEAGUE-RIVALS</center>
 
 </h1>
 
 <script src="script.js"></script>
 <br><br>
 
+
+
+
+<body class="news">
+  <header>
+    <div class="nav">
+      <ul>
+        <li class="home"><a href="index.php">Home</a></li>
+        <li class="profile"><a class="active" href="#">Profile</a></li>
+        <li class="games"><a href="#">Games</a></li>
+        <li class="stats"><a href="#">Stats</a></li>
+        <li class="about"><a href="about.php">About</a></li>
+      </ul>
+    </div>
+  </header>
+</body>
 
 
 <form action="index.php" method="post">
@@ -141,7 +157,8 @@ echo "Total: ".$totalvisits;
 
 
 </form>
-<hr>
+
+
 <?PHP
 echo "Most recent searches:<br>";
 $results = db_select("SELECT DISTINCT name FROM recentSearches ORDER BY id DESC LIMIT 5");
