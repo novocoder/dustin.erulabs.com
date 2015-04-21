@@ -4,7 +4,7 @@
 
 
 BODY {
-background-image : url(/images/simple_dashed.png);
+background-image : url(/images/blackorchid.png);
 background-repeat : repeat;
 background-position : 50% 50%;
 background-attachment : fixed;
@@ -12,6 +12,88 @@ color : #ffffff;
 font-family: 'Source Sans Pro', sans-serif;
 font-size: .9em;
 }
+
+/* Navigation Bar  */
+
+body {
+  margin: 0;
+  padding: 0;
+}
+ 
+.nav ul {
+  list-style: none;
+  background-color: #444;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+.nav li {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1.2em;
+  line-height: 40px;
+  height: 40px;
+  border-bottom: 1px solid #888;
+}
+ 
+.nav a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  transition: .3s background-color;
+}
+ 
+.nav a:hover {
+  background-color: #005f5f;
+}
+ 
+.nav a.active {
+  background-color: #fff;
+  color: #444;
+  cursor: default;
+}
+ 
+/* For Smaller Screens  */
+
+
+@media screen and (min-width: 600px) {
+  .nav li {
+    width: 120px;
+    border-bottom: none;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.4em;
+  }
+ 
+  /* Option 1 - Display Inline */
+  .nav li {
+    display: inline-block;
+    margin-right: -4px;
+  }
+
+
+
+h1 {
+
+
+color: #fff;
+font-size: 800%;
+font-style: italic;
+text-shadow:1px 1px 0 #fff,
+-1px -1px 0 #fff,
+1px -1px 0 #fff,
+-1px 1px 0 #fff,
+0px 1px 0 #fff,
+1px 0px 0 #fff,
+0px -1px 0 #fff,
+-1px 0px 0 #fff,
+4px 4px 3px #000;
+}
+
+.panel {
+	display: inline;
+}
+
+
 
 .foo {
 	display:inline-block;
@@ -29,7 +111,6 @@ font-size: .9em;
 
 #summicon {
 	text-align:center;
-
 	
 }
 
