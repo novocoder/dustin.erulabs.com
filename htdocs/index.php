@@ -4,8 +4,8 @@ require 'header.php';
 
 ?>
 
-Hello,
 
+<div class="hello_wrapper">
 <?php
 	if (!isset($_POST["name"])){
 		echo "Summoner";
@@ -33,6 +33,7 @@ require 'comments.php';
 
 
 ?>
+</div>
 <form action="index.php" method="post">
 	Name:
 	<br>

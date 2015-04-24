@@ -11,6 +11,6 @@ require "header.php";
 
 </head>
 
-	<h1> What Is League-Rivals?</h1>
+	<h2> What Is League-Rivals?</h2>
 
 	

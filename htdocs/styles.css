@@ -4,13 +4,46 @@
 
 
 BODY {
-background-image : url(/images/blackorchid.png);
+background-image : url(/images/blackorchid2.png);
 background-repeat : repeat;
 background-position : 50% 50%;
 background-attachment : fixed;
 color : #ffffff;
 font-family: 'Source Sans Pro', sans-serif;
 font-size: .9em;
+}
+
+.form_wrapper {
+	margin-top: 40px;
+	text-align: center;
+}
+
+.hello_wrapper {
+	text-align: center;
+	margin-top: 25px;
+}
+
+.search1 {
+  width:30%;
+  padding:15px 0px 15px 8px;
+  border-radius:5px;
+  box-shadow:inset 4px 6px 10px -4px rgba(0,0,0,0.3), 0 1px 1px -1px rgba(255,255,255,0.3);
+  background:rgba(0,0,0,0.2);
+  border:1px solid rgba(0,0,0,1);
+  margin-bottom:10px;
+  color:#6E6E6E;
+  text-shadow:#000 0px 1px 5px;
+  text-align: center;
+}
+
+.submit {
+  border-radius:5px;
+  background:rgba(0,0,0,0.2);
+  border:1px solid rgba(0,0,0,1);
+  color:#6E6E6E;
+  text-shadow:#000 0px 1px 5px;
+  text-align: center;
+
 }
 
 /* Navigation Bar  */
@@ -73,8 +106,6 @@ body {
 
 
 h1 {
-
-
 color: #fff;
 font-size: 800%;
 font-style: italic;
@@ -89,18 +120,6 @@ text-shadow:1px 1px 0 #fff,
 4px 4px 3px #000;
 }
 
-.panel {
-	display: inline;
-}
-
-
-
-.foo {
-	display:inline-block;
-	width: width;
-	height: height;
-	margin: 5px 5px 5px 5px;
-}		
 
 #summstats {
 	text-align:center;
@@ -111,208 +130,10 @@ text-shadow:1px 1px 0 #fff,
 
 #summicon {
 	text-align:center;
-	
 }
-
-
-.toggle-gallery {
-  display: none;
-}
-
-.toggle-gallery + label {
-  cursor: pointer;
-  display: block;
-  font-weight: bold;
-  line-height: 21px;
-  margin-bottom: 5px;
-}
-
-.toggle-gallery + label + div {
-  display: none;
-  margin-bottom: 10px;
-}
-
-.toggle-gallery:checked + label + div {
-  display: block;
-}
-
-.toggle-gallery + label:before {
-  background-color: #4F5150;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-  color: #FFFFFF;
-  content: "+";
-  display: block;
-  float: left;
-  font-weight: bold;
-  height: 20px;
-  line-height: 20px;
-  margin-right: 5px;
-  text-align: center;
-  width: 20px;
-}
-
-.toggle-gallery:checked + label:before {
-  content: "\2212";
-} 
 
 #gameContainer {
 	margin-left: 3em;
 	margin-top: 3em;
 	margin-bottom: 4em;
 }
-
-
-
-
-
-
-/*.noffswitch {
-    position: relative; width: 79px;
-        -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
-	    }
-	        .onoffswitch-checkbox {
-		    display: none;
-		        }
-			    .onoffswitch-label {
-			        display: block; overflow: hidden; cursor: pointer;
-				    border: 2px solid #EEEEEE; border-radius: 0px;
-				        }
-					    .onoffswitch-inner {
-					        display: block; width: 200%; margin-left: -100%;
-						    -moz-transition: margin 0.3s ease-in 0s; -webkit-transition: margin 0.3s ease-in 0s;
-						        -o-transition: margin 0.3s ease-in 0s; transition: margin 0.3s ease-in 0s;
-							    }
-							        .onoffswitch-inner:before, .onoffswitch-inner:after {
-								    display: block; float: left; width: 50%; height: 17px; padding: 0; line-height: 17px;
-								        font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
-									    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
-									        }
-										    .onoffswitch-inner:before {
-										        content: "Light";
-											    padding-left: 10px;
-											        background-color: #FFFFFF; color: #999999;
-												    }
-												        .onoffswitch-inner:after {
-													    content: "Dark";
-													        padding-right: 10px;
-														    background-color: #FFFFFF; color: #999999;
-														        text-align: right;
-															    }
-															        .onoffswitch-switch {
-																    display: block; width: 19px; margin: -1px;
-																        background: #0A0A0A;
-																	    border: 2px solid #EEEEEE; border-radius: 0px;
-																	        position: absolute; top: 0; bottom: 0; right: 58px;
-																		    -moz-transition: all 0.3s ease-in 0s; -webkit-transition: all 0.3s ease-in 0s;
-																		        -o-transition: all 0.3s ease-in 0s; transition: all 0.3s ease-in 0s;
-																			    }
-																			        .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
-																				    margin-left: 0;
-																				        }
-																					    .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
-																					        right: 0px;
-																						    }
-																						    noffswitch {
-																						        position: relative; width: 79px;
-																							    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
-																							        }
-																								    .onoffswitch-checkbox {
-																								        display: none;
-																									    }
-																									        .onoffswitch-label {
-																										    display: block; overflow: hidden; cursor: pointer;
-																										        border: 2px solid #EEEEEE; border-radius: 0px;
-																											    }
-																											        .onoffswitch-inner {
-																												    display: block; width: 200%; margin-left: -100%;
-																												        -moz-transition: margin 0.3s ease-in 0s; -webkit-transition: margin 0.3s ease-in 0s;
-																													    -o-transition: margin 0.3s ease-in 0s; transition: margin 0.3s ease-in 0s;
-																													        }
-																														    .onoffswitch-inner:before, .onoffswitch-inner:after {
-																														        display: block; width: 50%; height: 17px; padding: 0; line-height: 17px;
-																															    font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
-																															        -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
-																																    }
-																																        .onoffswitch-inner:before {
-																																	    content: "Light";
-																																	        padding-left: 10px;
-																																		    background-color: #FFFFFF; color: #999999;
-																																		        }
-																																			    .onoffswitch-inner:after {
-																																			        content: "Dark";
-																																				    padding-right: 10px;
-																																				        background-color: #FFFFFF; color: #999999;
-																																					    text-align: right;
-																																					        }
-																																						    .onoffswitch-switch {
-																																						        display: block; width: 19px; margin: -1px;
-																																							    background: #0A0A0A;
-																																							        border: 2px solid #EEEEEE; border-radius: 0px;
-																																								    position: absolute; top: 0; bottom: 0; right: 58px;
-																																								        -moz-transition: all 0.3s ease-in 0s; -webkit-transition: all 0.3s ease-in 0s;
-																																									    -o-transition: all 0.3s ease-in 0s; transition: all 0.3s ease-in 0s;
-																																									        }
-																																										    .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
-																																										        margin-left: 0;
-																																											    }
-																																											        .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
-																																												    right: 0px;
-																																												        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -113,7 +113,10 @@ echo "Total: ".$totalvisits;
 ?>
 
 <FORM METHOD="LINK" ACTION="login.php">
-<INPUT TYPE="submit" VALUE="Log In">
+	<INPUT TYPE="submit" VALUE="Log In">
+</FORM>
+	<FORM METHOD="LINK" ACTION="register.php">
+	<INPUT TYPE="submit" VALUE="Sign-up">
 </FORM>
 </div>
 
@@ -145,32 +148,36 @@ echo "Total: ".$totalvisits;
 </body>
 
 
-<form action="index.php" method="post">
 
-	Search A Summoner:
+<form class="form_wrapper" action="index.php" method="post">
 
-	<br>
-		<input type="text" name="name">
+<?PHP
+	echo "Recently Searched: ";
+$results = db_select("SELECT DISTINCT name FROM recentSearches ORDER BY id DESC LIMIT 5");
+$totalNumberOfNames = count($results);
+// If there is one thing in the list - its id is 0. 2... id 1... etc.
+$positionOfLastItemInList = $totalNumberOfNames - 1;
+
+foreach ($results as $recentName) {
+	echo $recentName['name'];
+//if we are not the last item, add ,
+	if($recentName['name'] != $results[$positionOfLastItemInList]['name']) {
+	echo ", ";
+	}
+};
+
+echo "<br><br>";
+
+?>
 	
-		<input type="submit" value="submit">
+	<br>
+		<input class="search1" type="text" name="name" placeholder="Search A Summoner">
+	<br>
+		<input class="submit" type="submit" value="submit">
 		
 
 
 </form>
 
 
-<?PHP
-echo "Most recent searches:<br>";
-$results = db_select("SELECT DISTINCT name FROM recentSearches ORDER BY id DESC LIMIT 5");
-$totalNumberOfNames = count($results);
-// If there is one thing in the list - its id is 0. 2... id 1... etc.
-$positionOfLastItemInList = $totalNumberOfNames - 1;
-foreach ($results as $recentName) {
-echo $recentName['name'];
-//if we are not the last item, add ,
-if($recentName['name'] != $results[$positionOfLastItemInList]['name']) {
-echo ", ";
-}
-};
-echo "<br><br>";
-?>
+

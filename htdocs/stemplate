@@ -1,0 +1,70 @@
+<div id="stat-table">
+   
+  <div id="title"> 
+    <h3>Summoner Stats:</h3>
+  </div>
+    <ul>
+        <li><b>Ranked 5v5</b></li>
+          <li> 86</li>
+        <li><b>Ranked 3v3</b></li>
+          <li> 5156 </li>
+        <li><b>Unranked 5v5</b></li>
+          <li> 5324</li>
+        <li><b>Unranked 3v3</b></li>      
+          <li>asd</li>      
+        <li><b></b></li>      
+    </ul>    
+    
+</div>
+
+
+body{
+  background: #000;
+}
+
+#stat-table {
+  margin: 100px auto;
+  text-align: left;
+  width: 100px; /* total computed width = 222 x 3 + 226 */
+  font: 12px 'Lucida Sans', 'trebuchet MS', Arial, Helvetica;
+  background: #fff;      
+  color: #333;
+  padding: 20px;
+  width: 225px; /* plan width = 180 + 20 + 20 + 1 + 1 = 222px */      
+  float: center;
+  position: relative;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  -moz-box-shadow: 20px 0 10px -10px rgba(0, 0, 0, .15), -20px 0 10px -10px rgba(0, 0, 0, .15);
+  -webkit-box-shadow: 20px 0 10px -10px rgba(0, 0, 0, .15), -20px 0 10px -10px rgba(0, 0, 0, .15);
+  box-shadow: 20px 0 10px -10px rgba(0, 0, 0, .15), -20px 0 10px -10px rgba(0, 0, 0, .15);    
+}
+
+  h3 {
+  text-align: center;  
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  padding: .2em;
+  margin: -20px -20px 25px -20px;
+  background-color: #444;
+  padding-top: 10px;
+  -moz-border-radius: 5px 5px 50 50;
+  -webkit-border-radius: 5px 5px 0 0;
+  border-radius: 5px 5px 0 0;
+}
+
+#stat-table ul {
+  padding: 0;
+  list-style: none;
+}
+
+#stat-table li {
+  padding: 8px 0;
+}
+#stat-table b {
+  border-bottom: 1px solid #ddd;
+  padding: 4px 0;
+}
+

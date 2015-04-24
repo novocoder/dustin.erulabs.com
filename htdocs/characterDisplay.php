@@ -46,15 +46,15 @@ $gameTypes = $myStats->playerStatSummaries;
 #print_r($gameTypes);
 
 foreach($gameTypes as $gameType) {
-  if ($gameType->playerStatSummaryType == 'Unranked' or
-  $gameType->playerStatSummaryType == 'RankedSolo5x5' or
-  $gameType->playerStatSummaryType == 'RankedTeam3x3' or
-  $gameType->playerStatSummaryType == 'unranked3x3' or
-  $gameType->playerStatSummaryType == 'RankedTeam5x5') {
-    echo "Total ".$gameType->playerStatSummaryType."
-    <font color=red><right>Kills</font></right>: ";
-    echo $gameType->aggregatedStats->totalChampionKills . "<br>";
-    echo "Wins: ". $gameType->wins . "     Losses: " . $gameType->losses."<br>";
+	   if ($gameType->playerStatSummaryType == 'Unranked' or
+	   $gameType->playerStatSummaryType == 'RankedSolo5x5' or
+	   $gameType->playerStatSummaryType == 'RankedTeam3x3' or
+	   $gameType->playerStatSummaryType == 'unranked3x3' or
+	   $gameType->playerStatSummaryType == 'RankedTeam5x5') {
+  	   echo "Total ".$gameType->playerStatSummaryType."
+ 	   <font color=red><right>Kills</font></right>: ";
+ 	   echo $gameType->aggregatedStats->totalChampionKills . "<br>";
+       echo "Wins: ". $gameType->wins . "     Losses: " . $gameType->losses."<br>";
   }
 }
 
@@ -87,9 +87,10 @@ function fixlolname($lolname) {
 
 ?>
 </div>
+<br><br>
 <?php
 
-echo "<br><br>";
+
 
 $games = $recentGames->games;
 $championId = $game->championId;
@@ -126,16 +127,18 @@ echo "\n\n";
 Recent Games:
 <br><br>
 <div class="gameContainer";
+
+<table>
+
 <?PHP
 
 foreach ($games as $gameNum => $game) {
 
 	$championId = $game->championId;
-	
 	$championDeaths = $game->stats->numDeaths;
 	$championKills = $game->stats->championsKilled;
-
 	$championName = $champions[$championId];
+
 	echo "<!---#$championId--->";
 
 	echo "<img src='images/" . fixlolname($championName) . "Square.png' > "  ;	
@@ -205,3 +208,4 @@ echo '<pre>';
 echo '</pre>';
 
 ?>
+</table>
