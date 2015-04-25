@@ -133,8 +133,7 @@ echo "Total: ".$totalvisits;
 
 
 
-<body class="news">
-  <header>
+<body>
     <div class="nav">
       <ul>
         <li class="home"><a href="index.php">Home</a></li>
@@ -144,12 +143,13 @@ echo "Total: ".$totalvisits;
         <li class="about"><a href="about.php">About</a></li>
       </ul>
     </div>
-  </header>
 </body>
 
 
 
 <form class="form_wrapper" action="index.php" method="post">
+
+
 
 <?PHP
 	echo "Recently Searched: ";
@@ -166,7 +166,6 @@ foreach ($results as $recentName) {
 	}
 };
 
-echo "<br><br>";
 
 ?>
 	

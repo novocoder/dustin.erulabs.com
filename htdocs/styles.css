@@ -16,6 +16,7 @@ font-size: .9em;
 .form_wrapper {
 	margin-top: 40px;
 	text-align: center;
+	margin-top: 15px;
 }
 
 .hello_wrapper {
@@ -24,13 +25,14 @@ font-size: .9em;
 }
 
 .search1 {
-  width:30%;
+  width:35em;
   padding:15px 0px 15px 8px;
   border-radius:5px;
   box-shadow:inset 4px 6px 10px -4px rgba(0,0,0,0.3), 0 1px 1px -1px rgba(255,255,255,0.3);
   background:rgba(0,0,0,0.2);
   border:1px solid rgba(0,0,0,1);
   margin-bottom:10px;
+  margin-top: 10px;
   color:#6E6E6E;
   text-shadow:#000 0px 1px 5px;
   text-align: center;
@@ -125,7 +127,7 @@ text-shadow:1px 1px 0 #fff,
 	text-align:center;
 	padding:30;
 	float:none;
-	margin-bottom: 3em;
+	margin-bottom: 2em;
 }
 
 #summicon {

@@ -18,8 +18,8 @@ $name = $_POST['name'];
 $summoner = $summonerAPI->info($name);
 
 $recentGames = $gameAPI->recent($summoner->id);
-echo " - Level: ";
-echo $summoner->summonerLevel;
+echo " - Level: " . $summoner->summonerLevel;
+ 
 ?>
 <br><br>
 
