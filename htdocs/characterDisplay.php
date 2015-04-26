@@ -21,6 +21,7 @@ $recentGames = $gameAPI->recent($summoner->id);
 echo " - Level: " . $summoner->summonerLevel;
  
 ?>
+
 <br><br>
 
 
@@ -32,9 +33,9 @@ $insert = mysqli_query($connection, "INSERT INTO `recentSearches` (`name`) VALUE
 $summoner = $summonerAPI->info($name);
 $recentGames = $gameAPI->recent($summoner->id);
 
-echo "<img src='http://avatar.leagueoflegends.com/na/". ($name) . ".png' >"  ;	
+echo "<img src='http://avatar.leagueoflegends.com/na/". ($name) . ".png' >" .  	
 
-echo "<br><br><h2> Summoner stats:</h2><br>";
+	  "<br><br><h2> Summoner stats:</h2><br>";
 
 //
 // Get the stats summary by summoner ID
@@ -128,7 +129,6 @@ Recent Games:
 <br><br>
 <div class="gameContainer";
 
-<table>
 
 <?PHP
 
@@ -203,9 +203,8 @@ echo "</div>";
 #	echo "<img src='/images/" . fixlolname($championName) . "Square.png'>";	
 #}
 
-echo '<pre>';
-//print_r($staticDataApi->getItems());
-echo '</pre>';
+#echo '<pre>';
+#print_r($staticDataApi->getItems());
+#echo '</pre>';
 
 ?>
-</table>
