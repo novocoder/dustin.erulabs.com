@@ -153,7 +153,6 @@ echo "Total: ".$totalvisits;
 <form class="form_wrapper" action="index.php" method="post">
 
 
-
 <?PHP
 	echo "Recently Searched: ";
 $results = db_select("SELECT DISTINCT name FROM recentSearches ORDER BY id DESC LIMIT 5");
