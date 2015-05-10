@@ -141,7 +141,7 @@ echo "Total: ".$totalvisits;
       <ul>
         <li class="home"><a href="index.php">Home</a></li>
         <li class="profile"><a class="active" href="#">Profile</a></li>
-        <li class="games"><a href="#">Games</a></li>
+        <li class="games"><a href="gameTypes.php">Games</a></li>
         <li class="stats"><a href="#">Stats</a></li>
         <li class="about"><a href="about.php">About</a></li>
       </ul>

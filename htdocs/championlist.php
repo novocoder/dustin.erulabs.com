@@ -2,10 +2,16 @@
 
 $champions = [];
 
-$champions[1] = "Annie"  ;
-$champions[2] = "Olaf";
+$champions_key = array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ,11 ,12 ,13 ,14 ,15 ,16 ,17 ,18 ,19 ,20 ,21 ,22 ,23 ,24 ,25 ,26 ,27 ,28 ,29 ,30 ,31 ,32 ,33 ,34 ,35 ,36 ,37 ,38 ,39 ,40 ,41 ,42 ,43 ,44 ,45 ,48 ,50 ,51 ,53 ,54 ,55 ,56 ,57 ,58 ,59 ,60 ,61 ,62 ,63 ,64 ,67 ,68 ,69 ,72 ,74 ,75 ,76 ,77 ,78 ,79 ,80 ,81 ,82 ,83 ,84 ,85 ,86 ,89 ,90 ,91 ,92 ,96 ,98 ,99, 101, 102, 103, 104, 105, 106, 107, 110, 111, 112, 113, 114, 115, 117, 119, 120, 121, 122, 126, 127, 131, 133, 134, 143, 150, 154, 157, 161, 201, 222, 236, 238, 254, 266, 267, 268, 412, 421, 429, 432); 
+
+
+
+// "Champion, Damage Type, Summoner type, "
+
+$champions[1] = "Annie, AP, Mage, Middle"; 
+$champions[2] = "Olaf, AD, Bruiser";
 $champions[3] = "Galio";
-$champions[4] = "Twisted Fate";
+$champions[4] = "Twisted Fate, AP, Mage";
 $champions[5] = "Xin Zhao";
 $champions[6] = "Urgot";
 $champions[7] = "LeBlanc";
@@ -88,7 +94,7 @@ $champions[98] = "Shen";
 $champions[99] = "Lux";
 $champions[101] = "Xerath";
 $champions[102] = "Shyvana";
-$champions[103] = "Ahri";
+$champions[103] = "Ahri, AP, Mage";
 $champions[104] = "Graves";
 $champions[105] = "Fizz";
 $champions[106] = "Volibear";
@@ -126,4 +132,10 @@ $champions[412] = "Thresh";
 $champions[421] = "RekSai";
 $champions[429] = "Kalista";
 $champions[432] = "Bard";
+
+$lanes = [];
+
+$lanes
 ?>      
+
+

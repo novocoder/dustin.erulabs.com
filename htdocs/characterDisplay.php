@@ -1,6 +1,7 @@
 
 <?PHP
 require 'championlist.php';
+require 'sumitems.php';
 #print_r($champions);
 
 require 'vendor/autoload.php';
@@ -95,7 +96,8 @@ function fixlolname($lolname) {
 
 $games = $recentGames->games;
 $championId = $game->championId;
-$championName = $champions[$championId];
+$selectName = explode(',',$champions[$championId]);
+$championName = $selectName[0];
 $championDeaths = $game->stats->numDeaths;
 $championKills = $game->stats->championsKilled;
 $gameDate = $game->createDate;
@@ -134,10 +136,23 @@ Recent Games:
 
 foreach ($games as $gameNum => $game) {
 
+	
 	$championId = $game->championId;
+	$selectName = explode(',',$champions[$championId]); //Selects Champion name from array of champion details
+	
+	
 	$championDeaths = $game->stats->numDeaths;
 	$championKills = $game->stats->championsKilled;
-	$championName = $champions[$championId];
+	$championName = $selectName[0];
+	
+	
+	// $itemsId = $game->stats->item0 . $game->stats->item1 . $game->stats->item2 . $game->stats->item3 . $game->stats->item4 . $game->stats->item5 . $game->stats->item6;
+	$itemsId = array($game->stats->item0, $game->stats->item1, $game->stats->item2, $game->stats->item3,
+				$game->stats->item4, $game->stats->item5, $game->stats->item6);
+
+	
+
+	
 
 	echo "<!---#$championId--->";
 
@@ -178,8 +193,21 @@ foreach ($games as $gameNum => $game) {
 	if ($championKills > $championDeaths +8 && $won == 1 ) {
 	echo "<font color='yellow'> - NICE! -</font>";
 	}
-	echo "<br><br>\n\n\n";
+	echo "<br>";
 	echo "<pre>";
+	
+	
+		foreach ($itemsId as $item) {
+
+		$selectItem = $sumitems[$item];
+		$showItems = $selectItem[0];
+		
+		if($showItems) { 
+		echo "<img src='images/" . $showItems . "Square.gif' > " ;
+		}
+
+	};
+	echo "<br>\n";
 	echo "Total Damage: ";
 	echo fixlolnum($game->stats->totalDamageDealt);
 	echo "	Damage to Champions:	";
@@ -191,9 +219,11 @@ foreach ($games as $gameNum => $game) {
 	echo "$cs";
 	echo "	Wards Placed:	";
 	echo fixlolnum($game->stats->wardPlaced);
+//	echo $championItems; 
 	echo "</pre>";
 	
 	echo "<br><br>\n\n\n";
+	echo "</div>";
 }
 echo "</div>";
 	echo "<hr>";
@@ -203,8 +233,8 @@ echo "</div>";
 #	echo "<img src='/images/" . fixlolname($championName) . "Square.png'>";	
 #}
 
-#echo '<pre>';
-#print_r($staticDataApi->getItems());
-#echo '</pre>';
+echo '<pre>';
+echo json_encode(get_object_vars($staticDataApi->getItems()));
+echo '</pre>';
 
 ?>
