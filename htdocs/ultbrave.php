@@ -33,15 +33,7 @@
         
 $rand_champions = array_rand($champions_key, 10);
 
-//   $list_size = 5;   
-  
-            
-                     
-//                       $show_items = $itemlist[0];
-//                       $show_boots = $itemlist[1];
-                     
-                     
-                      
+
    
             echo "<br><br> Champions: <br><br>";
            
@@ -56,17 +48,15 @@ $rand_champions = array_rand($champions_key, 10);
                 
                 for ($a = 0; $a < 6; $a++) {
                     
-                    $select_rand_items = array_rand($sumitemskey, 6);
+                    $select_rand_items = array_rand($sumitems, 6);
                     $itemlist = $sumitems[$sumitemskey[$select_rand_items[$a]]];
                     
-                    
-                    
-                        
-                         $check_for_boot = in_array("boot", $itemlist);
+                        echo $sumitems[$select_rand_items['item']];
+                        //  $check_for_boot = in_array("boot", $itemlist);
                          
                         //  while ($check_for_boot == false) {
                              
-                             echo "<img src='images/" . $itemlist[0] . "Square.gif' > ";
+                            //  echo "<img src='images/" . $itemlist[0] . "Square.gif' > ";
                              
                             //  $check_for_boot = true;
                         //  }
@@ -76,11 +66,11 @@ $rand_champions = array_rand($champions_key, 10);
                 }
                         
 
-function check() {
-    in_array("boot", $itemlist);
-    
-    
-}
+                // function check() {
+                //     in_array("boot", $itemlist);
+                    
+                    
+                // }
                        
                     // while ($check_for_boot == false) {
                         
@@ -103,56 +93,6 @@ function check() {
                  
                  
               
-                           
-                    // echo "<img src='images/" . $show_items . "Square.gif' > ";
-                    //  echo $show_items;
-                   
-                //  do {
-                //      $select_rand_items = array_rand($sumitemskey, 6); 
-                //      $itemlist = $sumitems[$sumitemskey[$select_rand_items]];
-                //      $show_items = $itemlist[0];
-                //      $check_for_boot = in_array("boot", $itemlist);
-                //          if ($check_if_boot == false){
-                                
-                //          }
-                //      }  
-                   
-                   
-                         
-                         
-                        //   $check_for_boot = true;
-                             
-                         
-                     
-                     
-                     
-                        //  if (in_array("boot", $itemlist))
-                        //  {
-                        //      echo "This thang hur is a boot -->";
-                        //  }
-                    // //  echo $selectItem[1];
-                    //  echo "<img src='images/" . $show_items . "Square.gif' > ";
-                 
-                // echo "<br><br><br><br>"; 
-            // };
-            
-            
-// $rand_boots = array_rand($bootKey, 1);
-
-// $listboots = $sumitems[$bootKey[$rand_boots]];
-
-
-// $selectBoot = explode(',',$listboots);
-
-// echo $selectBoot[1];
-
-//         function check_if_boot() {
-            
-//         }
-
-
-
-// if(in_array())
             
             
             
