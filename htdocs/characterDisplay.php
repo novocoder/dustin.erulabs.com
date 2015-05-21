@@ -1,23 +1,16 @@
-
 <?PHP
 require 'championlist.php';
-require 'sumitems.php';
 #print_r($champions);
-
 require 'vendor/autoload.php';
 use LeagueWrap\Api;
-
 require '../secretFile.php';
-
 $api = new Api($LEAGUE_APIKEY);
-
 $summonerAPI = $api->summoner();
 $gameAPI = $api->game();
 $statsAPI = $api->stats();
 $staticDataApi = $api->staticdata();
 $name = $_POST['name'];
 $summoner = $summonerAPI->info($name);
-
 $recentGames = $gameAPI->recent($summoner->id);
 echo " - Level: " . $summoner->summonerLevel;
  
@@ -28,25 +21,17 @@ echo " - Level: " . $summoner->summonerLevel;
 
 <div id="summstats" >
 <?php
-
 $insert = mysqli_query($connection, "INSERT INTO `recentSearches` (`name`) VALUES ('".$name."')");
-
 $summoner = $summonerAPI->info($name);
 $recentGames = $gameAPI->recent($summoner->id);
-
 echo "<img src='http://avatar.leagueoflegends.com/na/". ($name) . ".png' >" .  	
-
 	  "<br><br><h2> Summoner stats:</h2><br>";
-
 //
 // Get the stats summary by summoner ID
 $myStats = $statsAPI->summary($summoner->id);
-
 $gameTypes = $myStats->playerStatSummaries;
-
 // Debug mode: print out the stats array
 #print_r($gameTypes);
-
 foreach($gameTypes as $gameType) {
 	   if ($gameType->playerStatSummaryType == 'Unranked' or
 	   $gameType->playerStatSummaryType == 'RankedSolo5x5' or
@@ -59,14 +44,8 @@ foreach($gameTypes as $gameType) {
        echo "Wins: ". $gameType->wins . "     Losses: " . $gameType->losses."<br>";
   }
 }
-
-
-
-
 /*Places a "0" in return
 if there is no value */
-
-
 function fixlolnum($lolnumber) {
 	if ($lolnumber == ''){
 	  return "0";
@@ -74,55 +53,36 @@ function fixlolnum($lolnumber) {
 	  return $lolnumber;
 	}
 }
-
-
-
 /*Fixes Character names with spaces,
 periods, and other special characters */
-
 function fixlolname($lolname) {
 	$lolname = str_replace(" ", "", $lolname);
 	$lolname = str_replace("'", "", $lolname);
 	$lolname = str_replace(".", "", $lolname);
 	return $lolname;
 }
-
 ?>
 </div>
 <br><br>
 <?php
-
-
-
 $games = $recentGames->games;
 $championId = $game->championId;
-$selectName = explode(',',$champions[$championId]);
-$championName = $selectName[0];
+$championName = $champions[$championId];
 $championDeaths = $game->stats->numDeaths;
 $championKills = $game->stats->championsKilled;
 $gameDate = $game->createDate;
-
-
 //Date of Game Played//
 //$epoch = $gameDate
 //$dt = new DateTime("@$epoch");
 //echo $dt->format('y-m-d H:i:s');
-
 //$epoch = $gameDate;
 //$dt = new DateTime("@$epoch");
 //echo $dt->format('M/d/Y');
-
 //\\\\\\\\\\\\\\\\\\\\\\//
-
 $won = $game->stats->win;
-
 $cs = fixlolnum($game->stats->minionsKilled) + fixlolnum($game->stats->neutralMinionsKilled);
-
-
-
 #print_r($summoner);
 echo "\n\n";
-
 #print_r($recentGames->games[0]->stats);
 ?>
 </div>
@@ -136,54 +96,35 @@ Recent Games:
 
 foreach ($games as $gameNum => $game) {
 
-	
 	$championId = $game->championId;
-	$selectName = explode(',',$champions[$championId]); //Selects Champion name from array of champion details
-	
-	
 	$championDeaths = $game->stats->numDeaths;
 	$championKills = $game->stats->championsKilled;
-	$championName = $selectName[0];
+	$championName = $champions[$championId];
 	
-	
-	// $itemsId = $game->stats->item0 . $game->stats->item1 . $game->stats->item2 . $game->stats->item3 . $game->stats->item4 . $game->stats->item5 . $game->stats->item6;
-	$itemsId = array($game->stats->item0, $game->stats->item1, $game->stats->item2, $game->stats->item3,
-				$game->stats->item4, $game->stats->item5, $game->stats->item6);
-
-	
-
-	
+echo "<table>";
 
 	echo "<!---#$championId--->";
+	$thumb = "<img src='images/" . fixlolname($championName[0]) . "Square.png' > "  ;	
 
-	echo "<img src='images/" . fixlolname($championName) . "Square.png' > "  ;	
-
-	echo $championName;
-
-	echo " - ";
-
-	echo fixlolnum($game->stats->championsKilled);
-		echo "/";
-	echo fixlolnum($game->stats->numDeaths);
-		echo "/";
-	echo fixlolnum($game->stats->assists);
+echo $thumb;	
 	
 	
+	echo $championName[0];
+	
 	echo " - ";
+	$kda = fixlolnum($game->stats->championsKilled) . "/" . fixlolnum($game->stats->numDeaths) . "/" . fixlolnum($game->stats->assists);
 
+echo $kda;	
+	
+	echo " - ";
 	$won = $game->stats->win;
-
 	if ($won == 1){
 	  echo "<font color='green'>Victory</font>";
 	}
 	else {
 	  echo "<font color='red'>Defeat</font>";
-
 	}
-
-
 // Extended Stats & Game "comment"//
-
 	if ($championDeaths > $championKills) {
 	echo " ...Goddamn feeder";
 	}
@@ -193,21 +134,8 @@ foreach ($games as $gameNum => $game) {
 	if ($championKills > $championDeaths +8 && $won == 1 ) {
 	echo "<font color='yellow'> - NICE! -</font>";
 	}
-	echo "<br>";
+	echo "<br><br>\n\n\n";
 	echo "<pre>";
-	
-	
-		foreach ($itemsId as $item) {
-
-		$selectItem = $sumitems[$item];
-		$showItems = $selectItem[0];
-		
-		if($showItems) { 
-		echo "<img src='images/" . $showItems . "Square.gif' > " ;
-		}
-
-	};
-	echo "<br>\n";
 	echo "Total Damage: ";
 	echo fixlolnum($game->stats->totalDamageDealt);
 	echo "	Damage to Champions:	";
@@ -219,12 +147,12 @@ foreach ($games as $gameNum => $game) {
 	echo "$cs";
 	echo "	Wards Placed:	";
 	echo fixlolnum($game->stats->wardPlaced);
-//	echo $championItems; 
 	echo "</pre>";
 	
 	echo "<br><br>\n\n\n";
-	echo "</div>";
+echo "</table>";	
 }
+
 echo "</div>";
 	echo "<hr>";
 #print_r($recentGames->games[0]->stats);
@@ -232,9 +160,7 @@ echo "</div>";
 #foreach ($champions as $championId => $championName) {
 #	echo "<img src='/images/" . fixlolname($championName) . "Square.png'>";	
 #}
-
-echo '<pre>';
-echo json_encode(get_object_vars($staticDataApi->getItems()));
-echo '</pre>';
-
+#echo '<pre>';
+#print_r($staticDataApi->getItems());
+#echo '</pre>';
 ?>

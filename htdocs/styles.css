@@ -11,6 +11,7 @@ background-attachment : fixed;
 color : #ffffff;
 font-family: 'Source Sans Pro', sans-serif;
 font-size: .9em;
+text-align: center;
 }
 
 .form_wrapper {
@@ -86,11 +87,74 @@ body {
   color: #444;
   cursor: default;
 }
+
+
+
+
+.card {
+  text-align: center;
+  /*margin-left: 20%;*/
+  /*margin-right:20%;*/
+}
+
+
+
+table {
+  box-shadow:inset 4px 6px 10px -4px rgba(0,0,0,0.3), 0 1px 1px -1px rgba(255,255,255,0.3);
+  background:rgba(0,0,0,0.2);
+  border: solid 1px #717171;
+  color:#6E6E6E;
+  float: left;
+  margin: .9em;
+  box-align: center;
+  /*position: absolute;*/
+  min-height: 150px;
+  width: 23em;
+  margin: .3em;
  
+ 
+}
+
+tr {
+  /*text-align: center;*/
+}
+
+th {
+  font-size: .7em;
+  background: #666;
+  color: #FFF;
+  padding: 2px 6px;
+  border-collapse: separate;
+  border: 1px solid #000;
+  text-align: left;
+}
+
+td {
+  float: left;
+  text-align: left;
+  /*position: relative;*/
+  bottom: 0;
+  left: 0;
+  padding: .5%;
+}
+
+#redteam {
+  /*font-size: 5em;*/
+  color: red;
+}
+#blueteam {
+  color: blue;
+}
+
+
+p {
+  text-align: center;
+}
+
 /* For Smaller Screens  */
 
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 990px) {
   .nav li {
     width: 120px;
     border-bottom: none;
@@ -105,6 +169,52 @@ body {
     margin-right: -4px;
   }
 
+.card {
+  text-align: center;
+  /*margin-left: 20%;*/
+  /*margin-right:20%;*/
+}
+
+
+
+table {
+  box-shadow:inset 4px 6px 10px -4px rgba(0,0,0,0.3), 0 1px 1px -1px rgba(255,255,255,0.3);
+  background:rgba(0,0,0,0.2);
+  border: solid 1px #717171;
+  color:#6E6E6E;
+  float: left;
+  margin: .9em;
+  box-align: center;
+  /*position: absolute;*/
+  min-height: 150px;
+  width: 23em;
+  margin: .3em;
+ 
+ 
+}
+
+tr {
+  /*text-align: center;*/
+}
+
+th {
+  font-size: .7em;
+  background: #666;
+  color: #FFF;
+  padding: 2px 6px;
+  border-collapse: separate;
+  border: 1px solid #000;
+  text-align: left;
+}
+
+td {
+  float: left;
+  text-align: left;
+  /*position: relative;*/
+  bottom: 0;
+  left: 0;
+  padding: .5%;
+}
 
 
 h1 {

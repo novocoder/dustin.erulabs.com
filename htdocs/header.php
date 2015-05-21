@@ -46,73 +46,73 @@ function db_select($query) {
 
 <?php
 //NA RIOT SERVER STATUS//
-function ping($host)
-{
-        exec(sprintf('ping -c 1 -W 5 %s', escapeshellarg($host)), $res, $rval);
-        return $rval === 0;
-}
+// function ping($host)
+// {
+//         exec(sprintf('ping -c 1 -W 5 %s', escapeshellarg($host)), $res, $rval);
+//         return $rval === 0;
+// }
 
 
-echo "NA Server Status: ";
+// echo "NA Server Status: ";
 
 
-$host = '216.52.241.254';
-$up = ping($host);
+// $host = '216.52.241.254';
+// $up = ping($host);
 
-if( $up ) {
-        echo "up";
-}
-else {
-        echo "down";
-}
+// if( $up ) {
+//         echo "up";
+// }
+// else {
+//         echo "down";
+// }
 
-?>
+// ?>
 
-<br>	
+<!--// <br>	-->
 
 <?php
 
 
 // VISITOR COUNTER///
 
-$results = db_select("SELECT * FROM visitDATA");
-#print_r($results);
+// $results = db_select("SELECT * FROM visitDATA");
+// #print_r($results);
 
 
-//Have you visited before?
-$found = false;
-$totalvisits = 1;
-foreach ($results as $visitorDATA){
-	$totalvisits = $totalvisits + $visitorDATA["visits"];
+// //Have you visited before?
+// $found = false;
+// $totalvisits = 1;
+// foreach ($results as $visitorDATA){
+// 	$totalvisits = $totalvisits + $visitorDATA["visits"];
 
-//print_r ($visitorDATA);
-//	echo $visitorDATA["ip"];
-//	echo "<br>";
-//if this record is for your address 
-	if ($visitorDATA["ip"] == $_SERVER['REMOTE_ADDR']){
-		$found = true;
-		$visits = $visitorDATA["visits"];
-	}
-}
+// //print_r ($visitorDATA);
+// //	echo $visitorDATA["ip"];
+// //	echo "<br>";
+// //if this record is for your address 
+// 	if ($visitorDATA["ip"] == $_SERVER['REMOTE_ADDR']){
+// 		$found = true;
+// 		$visits = $visitorDATA["visits"];
+// 	}
+// }
 
-if ($found){
-	$visits = $visits+1;
-	//update
-	$update = mysqli_query($connection, "UPDATE `visitDATA` SET `visits`=".$visits." WHERE `ip`='".$_SERVER['REMOTE_ADDR']."'");
-} else {
-	//insert
-	$visits = 1;
-	$insert = mysqli_query($connection, "INSERT INTO `visitDATA` (`ip`,`visits`) VALUES ('". $_SERVER['REMOTE_ADDR'] ."',1)");
-}
+// if ($found){
+// 	$visits = $visits+1;
+// 	//update
+// 	$update = mysqli_query($connection, "UPDATE `visitDATA` SET `visits`=".$visits." WHERE `ip`='".$_SERVER['REMOTE_ADDR']."'");
+// } else {
+// 	//insert
+// 	$visits = 1;
+// 	$insert = mysqli_query($connection, "INSERT INTO `visitDATA` (`ip`,`visits`) VALUES ('". $_SERVER['REMOTE_ADDR'] ."',1)");
+// }
 
 
 
-//echo $_SERVER['REMOTE_ADDR'];
-echo "Your visits: ".$visits;
-echo "<br>";
-echo "Unique visits: " . count($results);
-echo "<br>";
-echo "Total: ".$totalvisits;
+// //echo $_SERVER['REMOTE_ADDR'];
+// echo "Your visits: ".$visits;
+// echo "<br>";
+// echo "Unique visits: " . count($results);
+// echo "<br>";
+// echo "Total: ".$totalvisits;
 ?>
 
 <FORM METHOD="LINK" ACTION="login.php">

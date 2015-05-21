@@ -7,20 +7,22 @@
         require 'sumitems.php';
         ?>
         <title>Ultimate-Bravery</title>
+    </head>
+    <body>
         
-        Ultimate-Bravery Generator Testingzes
+        <p>     
         
-        <br><br>
+         Ultimate-Bravery Game Generator
+         
+            <form action="ultbrave.php" method="get">
+              <input type="submit" value="Generate Random Game!">
+            </form>
+        </p>
         
-        <form action="ultbrave.php" method="get">
-          <input type="submit" value="Generate Random Game!">
-        </form>
-
-
-
-
-
-            <?PHP
+        
+  
+        <p>    
+<?PHP
             
             function fixlolname($lolname) {
 	$lolname = str_replace(" ", "", $lolname);
@@ -29,74 +31,70 @@
 	return $lolname;
 }
 
-        //   echo $sumitems[3254][1];  
+           
         
 $rand_champions = array_rand($champions_key, 10);
-
-
    
-            echo "<br><br> Champions: <br><br>";
            
+            // List 10 Random Champions with Lane assignment //
             for ($i = 0; $i < 10; $i++) {
-                
+    echo "<div class='card'>";  
+    echo "<table>";             
+                 $lanes = array("Top", "Middle", "Bottom", "Jungle");
+                 shuffle($lanes);
+                 $lane = $lanes[0];
+                 
+                 
+                 
                  $champlist = $champions[$champions_key[$rand_champions[$i]]];
-                 $selectChamp = explode(',',$champlist); 
-                 $show_champ = fixlolname($selectChamp[0]);
-                 echo $selectChamp[0] . "<br>" . "<img src='images/" . $show_champ . "Square.png' > ";
-                    
-               
-                
-                for ($a = 0; $a < 6; $a++) {
-                    
-                    $select_rand_items = array_rand($sumitems, 6);
-                    $itemlist = $sumitems[$sumitemskey[$select_rand_items[$a]]];
-                    
-                        echo $sumitems[$select_rand_items['item']];
-                        //  $check_for_boot = in_array("boot", $itemlist);
-                         
-                        //  while ($check_for_boot == false) {
-                             
-                            //  echo "<img src='images/" . $itemlist[0] . "Square.gif' > ";
-                             
-                            //  $check_for_boot = true;
-                        //  }
-                        
-                      
-                        
-                }
-                        
-
-                // function check() {
-                //     in_array("boot", $itemlist);
-                    
-                    
-                // }
-                       
-                    // while ($check_for_boot == false) {
-                        
-                        //   echo "<img src='images/" . $itemlist[0] . "Square.gif' > ";
-                        
-                    // }
-                    
-                    // $check_for_boot == true;
-                  
-                    
-                
-            
+                 $selectChamp = $champlist; 
                  
-               echo "<br><br>";
+                 $champs = $selectChamp[0];
+                 
+                 $player = $i + 1;
+                 
+                 if($player % 2 === 0) {       
+                 echo "<div class='blueteam'>" . "<tr><th>" . "Player " . $player . ":  " . $champs . "---" . $lane . "---" . "Team: B" . "</th></tr>" . "</div>";
+                 } else {
+                 echo "<div class='redteam'>" . "<tr><th>" . "Player " . $player . ":  " . $champs . "---" . $lane . "---" . "Team: A" . "</th></tr>" . "</div>";     
+                 };
+                //  echo "<th>" . "Lane: " . $lane . "</th> <th>" . "Team: A" . "</th></tr>";
+                 
+                 $thumb = "<img src='images/" . fixlolname($selectChamp[0]) . "Square.png' > ";
+             
+             
+                 
+                 echo "<td>" . $thumb . "</td>";
+                 
+                
+              
+                 // Random boot selection for each champion //
+                 for ($b = 0; $b < 1; $b++) {
+                     $rand_boot = array_rand($bootkey, 2);
+                     $bootlist = $sumitems[$bootkey[$rand_boot[$b]]];
+                     $select_boot = $bootlist;
+                     $boots = "<img src='images/" . $select_boot[0] . "Square.gif' >";
                      
-            
-              
-             }
-            
+                     echo "<td>" . $boots . "</td>";
+                 };
+                 // Random 5 items for each champion //
+                 for ($b = 0; $b < 5; $b++) {
+                     $rand_items = array_rand($sumitemskey, 5);
+                     $itemlist = $sumitems[$sumitemskey[$rand_items[$b]]];
+                     $selectItem = $itemlist;
+                     $items = "<img src='images/" . $selectItem[0] . "Square.gif' >";
+                     
+                     echo "<td>" . $items . "</td>";  
                  
-                 
-              
+                 };
+                
+                    //   echo "</tr>";            
+    echo "</table>";             
+    echo "</div>";          
+            };
             
-            
-            
-            ?>
-        
+?>
+        </p>
+    </body>
 </html>
 
