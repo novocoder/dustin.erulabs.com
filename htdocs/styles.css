@@ -3,7 +3,7 @@
 
 
 
-BODY {
+body {
 background-image : url(/images/blackorchid2.png);
 background-repeat : repeat;
 background-position : 50% 50%;
@@ -12,6 +12,8 @@ color : #ffffff;
 font-family: 'Source Sans Pro', sans-serif;
 font-size: .9em;
 text-align: center;
+margin: 0;
+padding:0;
 }
 
 .form_wrapper {
@@ -51,10 +53,7 @@ text-align: center;
 
 /* Navigation Bar  */
 
-body {
-  margin: 0;
-  padding: 0;
-}
+
  
 .nav ul {
   list-style: none;
@@ -175,7 +174,9 @@ p {
   /*margin-right:20%;*/
 }
 
-
+.gamecard {
+  color: red;
+}
 
 table {
   box-shadow:inset 4px 6px 10px -4px rgba(0,0,0,0.3), 0 1px 1px -1px rgba(255,255,255,0.3);

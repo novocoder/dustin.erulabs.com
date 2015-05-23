@@ -1,3 +1,12 @@
+<html>
+<head>
+
+</head>
+
+<body>
+	
+
+
 <?PHP
 require 'championlist.php';
 #print_r($champions);
@@ -17,7 +26,6 @@ echo " - Level: " . $summoner->summonerLevel;
 ?>
 
 <br><br>
-
 
 <div id="summstats" >
 <?php
@@ -89,8 +97,8 @@ echo "\n\n";
 <hr>
 Recent Games:
 <br><br>
-<div class="gameContainer";
-
+<div class="gamecard">;
+<table>
 
 <?PHP
 
@@ -100,11 +108,11 @@ foreach ($games as $gameNum => $game) {
 	$championDeaths = $game->stats->numDeaths;
 	$championKills = $game->stats->championsKilled;
 	$championName = $champions[$championId];
-	
-echo "<table>";
 
-	echo "<!---#$championId--->";
-	$thumb = "<img src='images/" . fixlolname($championName[0]) . "Square.png' > "  ;	
+
+
+	// echo "<!---#$championId--->";
+	$thumb = "<tr><img src='images/" . fixlolname($championName[0]) . "Square.png' ><tr> "  ;	
 
 echo $thumb;	
 	
@@ -117,6 +125,8 @@ echo $thumb;
 echo $kda;	
 	
 	echo " - ";
+	
+	
 	$won = $game->stats->win;
 	if ($won == 1){
 	  echo "<font color='green'>Victory</font>";
@@ -124,6 +134,8 @@ echo $kda;
 	else {
 	  echo "<font color='red'>Defeat</font>";
 	}
+	
+	
 // Extended Stats & Game "comment"//
 	if ($championDeaths > $championKills) {
 	echo " ...Goddamn feeder";
@@ -134,27 +146,28 @@ echo $kda;
 	if ($championKills > $championDeaths +8 && $won == 1 ) {
 	echo "<font color='yellow'> - NICE! -</font>";
 	}
-	echo "<br><br>\n\n\n";
-	echo "<pre>";
-	echo "Total Damage: ";
-	echo fixlolnum($game->stats->totalDamageDealt);
-	echo "	Damage to Champions:	";
-	echo fixlolnum($game->stats->totalDamageDealtToChampions);
-	echo "	Gold:	";
-	echo fixlolnum($game->stats->goldEarned);
-	echo "	Minions Killed:	";
-	$cs = fixlolnum($game->stats->minionsKilled) + fixlolnum($game->stats->neutralMinionsKilled);
-	echo "$cs";
-	echo "	Wards Placed:	";
-	echo fixlolnum($game->stats->wardPlaced);
-	echo "</pre>";
 	
-	echo "<br><br>\n\n\n";
-echo "</table>";	
-}
+	
 
+	echo "Total Damage: " . fixlolnum($game->stats->totalDamageDealt);
+
+	echo "	Damage to Champions: " . fixlolnum($game->stats->totalDamageDealtToChampions);
+
+	echo "	Gold:	" . fixlolnum($game->stats->goldEarned);
+
+
+	$cs = "	Minions Killed:	" . fixlolnum($game->stats->minionsKilled) + fixlolnum($game->stats->neutralMinionsKilled);
+	echo "$cs";
+	echo "	Wards Placed:	" . fixlolnum($game->stats->wardPlaced);
+
+
+	
+
+
+}
+echo "</table>";	
 echo "</div>";
-	echo "<hr>";
+
 #print_r($recentGames->games[0]->stats);
 #
 #foreach ($champions as $championId => $championName) {
@@ -164,3 +177,5 @@ echo "</div>";
 #print_r($staticDataApi->getItems());
 #echo '</pre>';
 ?>
+</body>
+</html>
