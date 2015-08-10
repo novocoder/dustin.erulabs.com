@@ -15,14 +15,29 @@ require 'header.php';
 
 
 <body>
-	<fieldset style="width:30%"> <legend> SIGN-UP HERE </legend>
-	<form name="form1" action="" method="post">
-	First Name <br><input type="text" name="t1"><br>
-	Last Name <br><input type="text" name="t2"><br>
-	Username <br><input type="text" name="t3"><br>
-	Password <br><input type="text" name="t4"><br><br>
-	<input type="submit" name="submit1" value="register">
-	</form>
+	<p>
+		<fieldset style="width:30%">
+		<legend> SIGN-UP HERE </legend>
+		<form id="register" action="register.php" method="post"
+			accept-charset="UTF-8">
+			
+			<input type="hidden" name="submitted" id="submitted" value="1"/>
+	
+		<label for="email" >Email Address*:</label>
+			<input type="text" name="email" id="email" maxlength="50"/>
+		<label for="username" >Username*:</label>
+			<input type="text" name="username" id="username" maxlength="25"/>
+		<label for="password" >Password*:</label>
+			<input type="password" name="password" id="password" maxlength="50" />
+		<input type="submit" name="Submit" value="Submit" />
+		
+		
+				
+		Username <br><input type="text" name="t3"><br>
+		Password <br><input type="text" name="t4"><br><br>
+		<input type="submit" name="submit1" value="register">
+		</form>
+	</p>
 </body>
 
 </html>

@@ -12,7 +12,7 @@
         
         <p>     
         
-         Ultimate-Bravery Game Generator
+         Ultimate-Bravery Game Generator (Random):
          
             <form action="ultbrave.php" method="get">
               <input type="submit" value="Generate Random Game!">

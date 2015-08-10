@@ -129,6 +129,7 @@ $champions[157] = array("Yasuo");
 $champions[161] = array("Vel'Koz");
 $champions[201] = array("Braum");
 $champions[222] = array("Jinx");
+$champions[223] = array("Tahm Kench");
 $champions[236] = array("Lucian");
 $champions[238] = array("Zed");
 $champions[254] = array("Vi");

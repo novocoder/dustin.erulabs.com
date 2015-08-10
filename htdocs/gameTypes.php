@@ -9,9 +9,9 @@
         <title>Game Generators</title>
     </head>
     <body>
-        Ultimate-Bravery Generator Testingzes
+        
         <p>
-            Testingzessdfsdfsfsd
+           Click a game type to generate builds.
             <form action="ultbrave.php" method="get">
               <input type="submit" value="Generate Random Game!">
             </form>

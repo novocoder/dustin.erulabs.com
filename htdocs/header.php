@@ -172,7 +172,7 @@ foreach ($results as $recentName) {
 ?>
 	
 	<br>
-		<input class="search1" type="text" name="name" placeholder="Search A Summoner">
+		<input class="search1" type="text" name="name" placeholder="Search Recent Games of Summoner">
 	<br>
 		<input class="submit" type="submit" value="submit">
 		
