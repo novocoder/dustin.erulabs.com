@@ -98,7 +98,7 @@ $cs = fixlolnum($game->stats->minionsKilled) + fixlolnum($game->stats->neutralMi
 // print_r($recentGames->games[0]->stats);
 ?>
 </div>
-<hr>
+<!--<hr>-->
 Recent Games:
 <br><br>
 	
@@ -220,7 +220,7 @@ echo "</pre></div>";
 		
 	
 			
-		echo "</div>";
+		echo "</div><br>";
 		// echo "<br>";
 		};
 		// echo "</table>";	

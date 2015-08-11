@@ -28,7 +28,7 @@ function db_select($query) {
 	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 
-<body>
+
 <b>
 <br>
 <!-- STYLE SWITCH!!!!!!!!!
