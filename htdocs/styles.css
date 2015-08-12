@@ -27,7 +27,6 @@ background-position : 50% 50%;
 background-attachment : fixed;
 color : #ffffff;
 font-family: 'Source Sans Pro', sans-serif;
-font-size: .9em;
 text-align: center;
 margin: 0;
 padding:0;
@@ -48,19 +47,20 @@ p {
 }
 
 .search1 {
-  width:35em;
-  padding:15px 0px 15px 8px;
-  border-radius:5px;
-  box-shadow:inset 4px 6px 10px -4px rgba(0,0,0,0.3), 0 1px 1px -1px rgba(255,255,255,0.3);
-  background:rgba(0,0,0,0.2);
-  border:1px solid rgba(0,0,0,1);
-  margin-bottom:10px;
-  margin-top: 10px;
-  color:#6E6E6E;
-  text-shadow:#000 0px 1px 5px;
-  text-align: center;
+    width: 90%;
+    height: 2em;
+    padding: 15px 0px 15px 8px;
+    border-radius: 5px;
+    box-shadow: inset 4px 6px 10px -4px rgba(0,0,0,0.3), 0 1px 1px -1px rgba(255,255,255,0.3);
+    background: rgba(0,0,0,0.2);
+    border: 1px solid rgb(47, 43, 43);
+    margin-bottom: 10px;
+    margin-top: 10px;
+    color: #6E6E6E;
+    text-shadow: #000 0px 1px 5px;
+    text-align: center;
+    font-size: 2em;
 }
-
 .submit {
   border-radius:5px;
   background:rgba(0,0,0,0.2);
@@ -122,8 +122,6 @@ p {
 
 .cardstats{
  
-  /*text-align: center;*/
-  /*box-shadow:inset 4px 6px 10px -4px rgba(0,0,0,0.3), 0 1px 1px -1px rgba(255,255,255,0.3);*/
   box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.3);
   -webkit-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.3);
   -moz-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.3);
@@ -132,7 +130,8 @@ p {
   color:#6E6E6E;
   margin-left: 5%;
   margin-right: 5%;
-  
+  margin-bottom: 1em;
+  margin-top: 1em;
   
 }
 
@@ -140,45 +139,54 @@ p {
 
 
 
-.extendedstats {
+.extendedbackground  {
   background-color:#D2D2D2;
   color: black;
-  font-size: 1.2em;
-  margin-left: 1em; 
-  margin-bottom: 1em;
-  padding-left: 0em;
-  padding-right: 0em;
-  padding-bottom: 0em;
-  padding-top: 0em;
-  text-align: left;
+  margin-left: 15px; 
+  margin-bottom: 15px;
   box-shadow:inset 4px 6px 10px -4px rgba(0,0,0,0.3), 0 1px 1px -1px rgba(255,255,255,0.3);
-  line-height:1.1em;
   border-bottom:  solid 1px gray;
   border-left: solid 1px gray;
-  border-top:  solid 1px #717171;
-  list-style-type:none;
+  padding-top: 1.7em;
+ 
 }
 
-li {
-  list-style-type: none;
-  padding: 0;
-  margin:0;
+
+.text {
+
+  width: 50%;
+  padding: 15px;
+  font-size: .9em;
+  float: left;
 }
 
-/*.extendedstats ul {*/
-  /*list-style-type: none*/
-  /*text-align:left;*/
+.text2 {
+  padding: 15px;
+  width: 50%;
+  font-size: .9em;
+  
+}
+
+.stat {
+ text-align: left;
+}
+
+.value {
+ 
+  text-align: right;
+
+  
+
+ 
+}
+
+/*li {*/
+/*  list-style-type: none;*/
+/*  padding: 0;*/
+/*  margin:0;*/
 /*}*/
-  
-  
-  
-  
-/*  box-align: center;*/
-  /*position: absolute;*/
-/*  min-height: 150px;*/
-/*  width: 95%;*/
-/*  margin: .3em;*/
-/*}*/
+
+
 
 .name {
   text-align: left;
@@ -214,10 +222,8 @@ li {
 }
 .thumbnail {
   float: left;
-  margin-top: -.8em;
-  margin-right: 1em;
+  margin-right: 2em;
   margin-left: 2em;
-  margin-bottom: 0;
   border: solid 4px white;
   outline: solid 2px black;
   background-color: black;
@@ -261,52 +267,51 @@ li {
 
 /*Random Game Cards*/
 
-.card {
-  text-align: center;
-  margin-left: 32%;
-  margin-right:32%;
-}
+/*.card {*/
+/*  text-align: center;*/
+/*  margin-left: 32%;*/
+/*  margin-right:32%;*/
+/*}*/
 
-Random Game Cards
+/*Random Game Cards*/
 
-table {
-  box-shadow:inset 4px 6px 10px -4px rgba(0,0,0,0.3), 0 1px 1px -1px rgba(255,255,255,0.3);
-  background:rgba(0,0,0,0.2);
-  border: solid 1px #717171;
-  color:#6E6E6E;
-  float: left;
-  margin: .9em;
-  box-align: center;
-  /*position: absolute;*/
-  min-height: 150px;
-  width: 15em;
-  margin: .3em;
+/*table {*/
+/*  box-shadow:inset 4px 6px 10px -4px rgba(0,0,0,0.3), 0 1px 1px -1px rgba(255,255,255,0.3);*/
+/*  background:rgba(0,0,0,0.2);*/
+/*  border: solid 1px #717171;*/
+/*  color:#6E6E6E;*/
+/*  float: left;*/
+/*  margin: .9em;*/
+/*  box-align: center;*/
+/*  min-height: 150px;*/
+/*  width: 15em;*/
+/*  margin: .3em;*/
  
  
-}
+/*}*/
 
-tr {
-  text-align: center;
-}
+/*tr {*/
+/*  text-align: center;*/
+/*}*/
 
-th {
-  font-size: .7em;
-  background: #666;
-  color: #FFF;
-  padding: 2px 6px;
-  border-collapse: separate;
-  border: 1px solid #000;
-  text-align: left;
-}
+/*th {*/
+/*  font-size: .7em;*/
+/*  background: #666;*/
+/*  color: #FFF;*/
+/*  padding: 2px 6px;*/
+/*  border-collapse: separate;*/
+/*  border: 1px solid #000;*/
+/*  text-align: left;*/
+/*}*/
 
-td {
-  float: left;
-  text-align: left;
-  position: relative;
-  bottom: 0;
-  left: 0;
-  padding: .5%;
-}
+/*td {*/
+/*  float: left;*/
+/*  text-align: left;*/
+/*  position: relative;*/
+/*  bottom: 0;*/
+/*  left: 0;*/
+/*  padding: .5%;*/
+/*}*/
 
 /*//////////////////////*/
 
@@ -315,7 +320,21 @@ td {
 
 
 /*@media screen and (orientation : landscape) {*/
-@media only screen and (orientation : landscape) and (min-device-width: 768px){
+@media only screen and (min-device-width: 768px){
+  
+.search1 {
+width:35em;
+padding:15px 0px 15px 8px;
+border-radius:5px;
+box-shadow:inset 4px 6px 10px -4px rgba(0,0,0,0.3), 0 1px 1px -1px rgba(255,255,255,0.3);
+background:rgba(0,0,0,0.2);
+border:1px solid rgba(0,0,0,1);
+margin-bottom:10px;
+margin-top: 10px;
+color:#6E6E6E;
+text-shadow:#000 0px 1px 5px;
+text-align: center;
+}
 .nav li {
   width: 120px;
   border-bottom: none;
@@ -353,48 +372,69 @@ text-align:center;
 
 .cardstats{
  
-  /*text-align: center;*/
-  /*box-shadow:inset 4px 6px 10px -4px rgba(0,0,0,0.3), 0 1px 1px -1px rgba(255,255,255,0.3);*/
   box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.3);
   -webkit-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.3);
   -moz-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.3);
   background:rgba(0,0,0,0.2);
   border: solid 1px #717171;
   color:#6E6E6E;
-  /*margin: 0;*/
-  /*zoom: 0;*/
+  margin-bottom: 1em;
+  margin-top: 1em;
   margin-left: 28%;
   margin-right: 28%;
-  
 }
 
-.extendedstats {
- 
+.extendedbackground {
+  background-color:#D2D2D2;
   color: black;
-  font-size: 1em;
-  margin-left: 1em;
-  margin-bottom: 1em;
-  padding-top: 0em;
-  padding-left: 0px;
-  padding-right: 0px;
-  text-align: left;
-  list-style-type:none;
-  border-left: solid 1px gray;
-  border-bottom: solid 1px gray;
-  line-height:1.5em;
+  margin-left: 15px; 
+  margin-bottom: 15px;
   box-shadow:inset 4px 6px 10px -4px rgba(0,0,0,0.3), 0 1px 1px -1px rgba(255,255,255,0.3);
+  border-bottom:  solid 1px gray;
+  border-left: solid 1px gray;
+  padding-top: 8px;  
  
 }
+
+
+.text {
+  padding: 15px;
+  width: 50%;
+  font-size: .8em;
+  float: left;
+}
+
+.text2 {
+  padding: 15px;
+  width: 50%;
+  font-size: .8em;
+ 
+}
+
+
+.stat {
+  text-align: left;
+}
+
+.value {
+  text-align: right;
+  
+ 
+
+ 
+
+
+}
+
 .thumbnail {
   float: left;
-  margin-top:5px;
   margin-right: 2em;
   margin-left: 2em;
   border: solid 4px white;
   outline: solid 2px black;
   background-color: black;
   position: relative;
-  margin-bottom: 0em;
+ 
   
 }  
 
@@ -462,44 +502,44 @@ text-align:center;
 
 /*Random Game Cards*/
 
-table {
-  box-shadow:inset 4px 6px 10px -4px rgba(0,0,0,0.3), 0 1px 1px -1px rgba(255,255,255,0.3);
-  background:rgba(0,0,0,0.2);
-  border: solid 1px #717171;
-  color:#6E6E6E;
+/*table {*/
+/*  box-shadow:inset 4px 6px 10px -4px rgba(0,0,0,0.3), 0 1px 1px -1px rgba(255,255,255,0.3);*/
+/*  background:rgba(0,0,0,0.2);*/
+/*  border: solid 1px #717171;*/
+/*  color:#6E6E6E;*/
   /*float: left;*/
   /*margin: .9em;*/
   /*box-align: center;*/
-  position: relative;
-  min-height: 150px;
-  width: 100%;
+/*  position: relative;*/
+/*  min-height: 150px;*/
+/*  width: 100%;*/
 
  
  
-}
+/*}*/
 
-tr {
-  text-align: center;
-}
+/*tr {*/
+/*  text-align: center;*/
+/*}*/
 
-th {
-  font-size: .7em;
-  background: #666;
-  color: #FFF;
-  padding: 2px 6px;
-  border-collapse: separate;
-  border: 1px solid #000;
-  text-align: left;
-}
+/*th {*/
+/*  font-size: .7em;*/
+/*  background: #666;*/
+/*  color: #FFF;*/
+/*  padding: 2px 6px;*/
+/*  border-collapse: separate;*/
+/*  border: 1px solid #000;*/
+/*  text-align: left;*/
+/*}*/
 
-td {
-  float: left;
-  text-align: left;
-  position: relative;
-  bottom: 0;
-  left: 0;
-  padding: .5%;
-}
+/*td {*/
+/*  float: left;*/
+/*  text-align: left;*/
+/*  position: relative;*/
+/*  bottom: 0;*/
+/*  left: 0;*/
+/*  padding: .5%;*/
+/*}*/
 
 /*//////////////////////*/
-}
+/*}*/

@@ -92,7 +92,7 @@ $gameDate = $game->createDate;
 //echo $dt->format('M/d/Y');
 //\\\\\\\\\\\\\\\\\\\\\\//
 $won = $game->stats->win;
-$cs = fixlolnum($game->stats->minionsKilled) + fixlolnum($game->stats->neutralMinionsKilled);
+// $cs = fixlolnum($game->stats->minionsKilled)
 #print_r($summoner);
 
 // print_r($recentGames->games[0]->stats);
@@ -127,9 +127,9 @@ $championName = $champions[$championId];
 $item_nums = [$game->stats->item0,$game->stats->item1,$game->stats->item2,$game->stats->item3,$game->stats->item4,$game->stats->item5];
 // . $game->stats->item1 . $game->stats->item2 . $game->stats->item3 . $game->stats->item4 . $game->stats->item5;
 $kda = fixlolnum($game->stats->championsKilled) . "/" . fixlolnum($game->stats->numDeaths) . "/" . fixlolnum($game->stats->assists);
-
+$cs = fixlolnum($game->stats->minionsKilled) + fixlolnum($game->stats->neutralMinionsKilled);
 $thumb = "<tr><img src='images/" . fixlolname($championName[0]) . "Square.png' ><tr> "  ;		 
-
+$
 // echo "<!---#$championId--->";
 
 $won = $game->stats->win;
@@ -167,7 +167,7 @@ $won = $game->stats->win;
 			
 			
 			
-			// echo "</td>";
+
 		
 			
 		echo " <br>";
@@ -191,28 +191,45 @@ foreach ($item_nums as $item) {
 
 
 };
+
 foreach($blanks as $blank) {
 	echo "<img src='images/blankSquare.png'>";
 };		
-echo "</div>";			
-echo "<div class='extendedstats'><pre>";
-		
-			 
-		
-	echo "<ul> <li>" . 'Total Damage: ' . fixlolnum($game->stats->totalDamageDealt) . "</li>";
+echo "</div>";		
+?>
 
-	echo "<li>" . 'Damage to Champions: ' . fixlolnum($game->stats->totalDamageDealtToChampions) .  "</li>";
 
-	echo "<li>" . 'Gold:	' . fixlolnum($game->stats->goldEarned) .  "</li>";
+	
+<?php
+
+echo "<div class='extendedbackground'>";
+
+
+	echo "<table class='text'>";	
 		
-		
-	$cs = "Minions Killed:	" . fixlolnum($game->stats->minionsKilled) + fixlolnum($game->stats->neutralMinionsKilled);
-	echo "<li>" . "CS: " . $cs .  "</li>";
-	echo "<li>" . 'Wards Placed: ' . fixlolnum($game->stats->wardPlaced) .  "</li> </ul>";
+		echo "<tr><td class='stat'> Damage Dealt: </td>"  . "<td class='value'>" . fixlolnum($game->stats->totalDamageDealt) . "</td></tr>";
+		echo "<tr><td class='stat'> Damage to Champions: </td>" . "<td class='value'>" . fixlolnum($game->stats->totalDamageDealtToChampions) .  "</td></tr>";
+		echo "<tr><td class='stat'> Damage Taken </td>" . "<td class='value'>" . fixlolnum($game->stats->totalDamageTaken) .  "</td></tr>";
+		echo "<tr><td class='stat'> AD Damage Taken </td>" . "<td class='value'>" . fixlolnum($game->stats->physicalDamageTaken) .  "</td></tr>";
+		echo "<tr><td class='stat'> AP Damage Taken </td>" . "<td class='value'>" . fixlolnum($game->stats->magicDamageTaken) .  "</td></tr>";
+		echo "<tr><td class='stat'> Gold </td>" . "<td class='value'>" . fixlolnum($game->stats->goldEarned) .  "</td></tr>";
+		echo "<tr><td class='stat'> CS </td>" . "<td class='value'>" . $cs .  "</td></tr>";
+		echo "<tr><td class='stat'> Wards Placed </td>" . "<td class='value'>" . fixlolnum($game->stats->wardPlaced) .  "</td></tr>";
 			
-echo "</pre></div>";
-
-
+	echo "</table>";
+	
+	echo "<table class='text2'>";	
+		
+		echo "<tr><td class='stat'> Damage Dealt: </td>"  . "<td class='value'>" . fixlolnum($game->stats->totalDamageDealt) . "</td></tr>";
+		echo "<tr><td class='stat'> Damage to Champions: </td>" . "<td class='value'>" . fixlolnum($game->stats->totalDamageDealtToChampions) .  "</td></tr>";
+		echo "<tr><td class='stat'> Damage Taken </td>" . "<td class='value'>" . fixlolnum($game->stats->totalDamageTaken) .  "</td></tr>";
+		echo "<tr><td class='stat'> AD Damage Taken </td>" . "<td class='value'>" . fixlolnum($game->stats->physicalDamageTaken) .  "</td></tr>";
+		echo "<tr><td class='stat'> AP Damage Taken </td>" . "<td class='value'>" . fixlolnum($game->stats->magicDamageTaken) .  "</td></tr>";
+		echo "<tr><td class='stat'> Gold </td>" . "<td class='value'>" . fixlolnum($game->stats->goldEarned) .  "</td></tr>";
+		echo "<tr><td class='stat'> CS </td>" . "<td class='value'>" . $cs .  "</td></tr>";
+		echo "<tr><td class='stat'> Wards Placed </td>" . "<td class='value'>" . fixlolnum($game->stats->wardPlaced) .  "</td></tr>";
+			
+	echo "</table>";
 		// foreach($blanks as $blank) {
 			
 		// 	echo "<img src='images/blankSquare.png'>";
@@ -220,8 +237,8 @@ echo "</pre></div>";
 		
 	
 			
-		echo "</div><br>";
-		// echo "<br>";
+		echo "</div>";
+	echo "</div>";	// echo "<br>";
 		};
 		// echo "</table>";	
 		
