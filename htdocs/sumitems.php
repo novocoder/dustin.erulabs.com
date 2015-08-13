@@ -240,6 +240,8 @@ $sumitems[3050] = array("zekesherald");
 $sumitems[3172] = array("zephyr");
 $sumitems[3157] = array("zhonyashourglass", "final");
 $sumitems[3512] = array("zzrotportal");
+$sumitems[3742] = array("deadmansplate");
+
 
 
 // $rand_boots = array_rand($bootKey, 1);
