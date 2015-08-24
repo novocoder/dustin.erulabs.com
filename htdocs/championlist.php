@@ -140,6 +140,8 @@ $champions[412] = array("Thresh");
 $champions[421] = array("RekSai");
 $champions[429] = array("Kalista");
 $champions[432] = array("Bard");
+$champions[245] = array("Ekko");
+
 
 $lanes = [];
 
