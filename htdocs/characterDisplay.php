@@ -211,25 +211,24 @@ echo "</table>";
 		
 		echo "<tr><td class='stat'> Damage Dealt: </td>"  . "<td class='value'>" . fixlolnum($game->stats->totalDamageDealt) . "</td></tr>";
 		echo "<tr><td class='stat'> Damage to Champions: </td>" . "<td class='value'>" . fixlolnum($game->stats->totalDamageDealtToChampions) .  "</td></tr>";
-		echo "<tr><td class='stat'> Damage Taken </td>" . "<td class='value'>" . fixlolnum($game->stats->totalDamageTaken) .  "</td></tr>";
-		echo "<tr><td class='stat'> AD Damage Taken </td>" . "<td class='value'>" . fixlolnum($game->stats->physicalDamageTaken) .  "</td></tr>";
-		echo "<tr><td class='stat'> AP Damage Taken </td>" . "<td class='value'>" . fixlolnum($game->stats->magicDamageTaken) .  "</td></tr>";
-		echo "<tr><td class='stat'> Gold </td>" . "<td class='value'>" . fixlolnum($game->stats->goldEarned) .  "</td></tr>";
-		echo "<tr><td class='stat'> CS </td>" . "<td class='value'>" . $cs .  "</td></tr>";
-		echo "<tr><td class='stat'> Wards Placed </td>" . "<td class='value'>" . fixlolnum($game->stats->wardPlaced) .  "</td></tr>";
+		echo "<tr><td class='stat'> Damage Taken: </td>" . "<td class='value'>" . fixlolnum($game->stats->totalDamageTaken) .  "</td></tr>";
+		echo "<tr><td class='stat'> AD Damage Dealt: </td>" . "<td class='value'>" . fixlolnum($game->stats->physicalDamageDealtPlayer) .  "</td></tr>";
+		echo "<tr><td class='stat'> AP Damage Dealt: </td>" . "<td class='value'>" . fixlolnum($game->stats->magicDamageDealtPlayer) .  "</td></tr>";
+		echo "<tr><td class='stat'> Healed: </td>" . "<td class='value'>" . fixlolnum($game->stats->totalHeal) .  "</td></tr>";
 			
 	echo "</table>";
 	
+	
 	echo "<table class='text2'>";	
 		
-		echo "<tr><td class='stat'> Damage Dealt: </td>"  . "<td class='value'>" . fixlolnum($game->stats->totalDamageDealt) . "</td></tr>";
-		echo "<tr><td class='stat'> Damage to Champions: </td>" . "<td class='value'>" . fixlolnum($game->stats->totalDamageDealtToChampions) .  "</td></tr>";
-		echo "<tr><td class='stat'> Damage Taken </td>" . "<td class='value'>" . fixlolnum($game->stats->totalDamageTaken) .  "</td></tr>";
-		echo "<tr><td class='stat'> AD Damage Taken </td>" . "<td class='value'>" . fixlolnum($game->stats->physicalDamageTaken) .  "</td></tr>";
-		echo "<tr><td class='stat'> AP Damage Taken </td>" . "<td class='value'>" . fixlolnum($game->stats->magicDamageTaken) .  "</td></tr>";
-		echo "<tr><td class='stat'> Gold </td>" . "<td class='value'>" . fixlolnum($game->stats->goldEarned) .  "</td></tr>";
-		echo "<tr><td class='stat'> CS </td>" . "<td class='value'>" . $cs .  "</td></tr>";
-		echo "<tr><td class='stat'> Wards Placed </td>" . "<td class='value'>" . fixlolnum($game->stats->wardPlaced) .  "</td></tr>";
+		echo "<tr><td class='stat'> Largest Mult-Kill: </td>"  . "<td class='value'>" . fixlolnum($game->stats->largestMultiKill) . "</td></tr>";
+		echo "<tr><td class='stat'> Largest Killing Spree: </td>" . "<td class='value'>" . fixlolnum($game->stats->largestKillingSpree) .  "</td></tr>";
+		echo "<tr><td class='stat'> Number of Killing Sprees: </td>" . "<td class='value'>" . fixlolnum($game->stats->killingSprees) .  "</td></tr>";
+		echo "<tr><td class='stat'> AD Damage Taken: </td>" . "<td class='value'>" . fixlolnum($game->stats->physicalDamageTaken) .  "</td></tr>";
+		echo "<tr><td class='stat'> AP Damage Taken: </td>" . "<td class='value'>" . fixlolnum($game->stats->magicDamageTaken) .  "</td></tr>";
+		echo "<tr><td class='stat'> Enemy Jungle Kills: </td>" . "<td class='value'>" . fixlolnum($game->stats->neutralMinionsKilledEnemyJungle) .  "</td></tr>";
+
+
 			
 	echo "</table>";
 	
