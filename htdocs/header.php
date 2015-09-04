@@ -31,44 +31,11 @@ function db_select($query) {
 
 <b>
 <br>
-<!-- STYLE SWITCH!!!!!!!!!
 
-<div class="onoffswitch">
-        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
-	    <label class="onoffswitch-label" for="myonoffswitch">
-	        <span class="onoffswitch-inner"></span>
-		    <span class="onoffswitch-switch"></span>
-		        </label>
-			    </div> -->
 <div style="text-align:right;">
 
 
 
-<?php
-//NA RIOT SERVER STATUS//
-// function ping($host)
-// {
-//         exec(sprintf('ping -c 1 -W 5 %s', escapeshellarg($host)), $res, $rval);
-//         return $rval === 0;
-// }
-
-
-// echo "NA Server Status: ";
-
-
-// $host = '216.52.241.254';
-// $up = ping($host);
-
-// if( $up ) {
-//         echo "up";
-// }
-// else {
-//         echo "down";
-// }
-
-// ?>
-
-<!--// <br>	-->
 
 <?php
 
